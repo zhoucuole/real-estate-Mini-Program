@@ -1,0 +1,34 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+}
+.pb-title {
+  text-align: center;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.bg-wrap {
+  background:#fff;
+}
+.pb-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+.pb-item {
+  height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.pb-item text {
+
+  font-size: 30rpx;
+}

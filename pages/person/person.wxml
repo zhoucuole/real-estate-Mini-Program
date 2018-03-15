@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="cm-link-wrap">
+  <view url="url" class="link-item logo-first">
+      <text class="link-text">头像</text>
+      <view class="link-dc"><image src="{{userInfo.avatarUrl}}" class="logo-icon" background-size="cover" /></view>
+  </view>
+  <view url="url" class="link-item">
+      <text class="link-text">昵称</text>
+      <view class="link-dc">
+      <!--已有用户昵称-->
+      <text class="per-text">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <navigator url="../changePhone/changePhone" class="link-item">
+      <text class="link-text">手机号</text>
+      <view class="link-dc">
+      <text class="per-text">{{phone}}</text>
+      <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <!--<navigator url="url" class="link-item">
+      <text class="link-text">个人介绍</text>
+      <view class="link-dc"><image src="/images/right.png" class="icon-default" /></view>
+    </navigator>-->
+    <navigator url="../changePassword/changePassword" class="link-item">
+      <text class="link-text">修改密码</text>
+      <view class="link-dc"><image src="/images/right.png" class="icon-default" /></view>
+    </navigator>
+    </view>
+    <view class="btn-wrap">
+    <button bindtap="loginOut" class="btn-default">退出登录</button>
+    </view>
+</view>

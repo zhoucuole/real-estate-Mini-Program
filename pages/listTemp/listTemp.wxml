@@ -1,0 +1,33 @@
+<!--列表模板-->
+<template name="listTemp">
+  <navigator url="{{'../roomDetail/roomDetail?id='+item.id}}" class="tmpitem-box" wx:for="{{list}}" wx:if="{{list.length>0}}">
+    <view class="img-wrap-z">
+      <image src="{{'https://'+item.avatar}}" class="img"></image>
+      <!-- 已下架 -->
+      <view class="off-the-shelf" wx:if="{{flag=='2'}}">
+        <view>已下架</view>
+      </view>
+    </view>
+    <view class="tmp-content">
+      <view class="{{flag=='2'?'tmp-name color-ccc':'tmp-name'}}">{{item.title}}</view>
+      <view wx:if="{{item.room_type=='1'}}" class="tmp-dec">{{item.village}} | {{item.room}}室{{item.hall}}厅{{item.toilet}}卫 | {{item.area}}m²</view>
+      <view wx:if="{{item.room_type=='2'}}" class="tmp-dec">{{item.variety_zh}} | 开盘时间:{{item.age_format}}</view>
+      <view wx:if="{{item.room_type=='6'}}" class="tmp-dec">{{item.building}} | {{item.property}} | {{item.floor}}层 | {{item.area}}m²</view>
+      <view wx:if="{{item.room_type=='5'}}" class="tmp-dec">{{item.property}} | {{item.variety_zh}} | {{item.floor}}层 | {{item.area}}m²</view>
+      <view wx:if="{{item.room_type=='1'||item.room_type=='2'}}" class="tmp-dec z-tags">
+        <view class="tmp-i" wx:if="{{item.room_type=='1'||item.room_type=='2'}}" wx:for="{{item.feature_json}}" wx:for-item="i">{{i}}</view>
+      </view>
+      <view class="tmp-dec" wx:if="{{item.room_type=='2'}}">
+        <text class="{{flag=='2'?'tmp-price color-ccc':'tmp-price'}}">{{item.unit_price}}元/m²</text>
+      </view>
+      <view wx:else class="tmp-dec">
+        <text class="{{flag=='2'?'tmp-price color-ccc':'tmp-price'}}">{{item.price}}</text>
+        <text class="{{flag=='2'?'tmp-tip color-ccc':'tmp-tip'}}">万</text>
+        <text class="temp-dprice">{{item.unit_price}}元/m²</text>
+      </view>
+    </view>
+  </navigator>
+  <view wx:if="{{list.length==0}}" class="noData">
+    暂无数据...
+  </view>
+</template>

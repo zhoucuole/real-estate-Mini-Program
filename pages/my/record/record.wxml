@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="record-cell" wx:for="{{record_list}}">
+    <view class="cell-header">
+      <image src="{{item.people.url}}"></image>
+      <view class="cell-header-info">
+        <view>
+          <text>{{item.people.name}}</text>
+          <button class="btn-default">{{item.people.identity}}</button>
+        </view>
+        <view>
+          <image src="../../../images/phone.png"></image>
+          <text>{{item.people.phone}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cell-body">
+      <image src="{{item.house.url}}"></image>
+      <view class="house-info">
+        <text>{{item.house.title}}</text>
+        <text>{{item.house.address}}</text>
+        <view>
+          <text>{{item.house.square}} m² | {{item.house.place}}</text>
+          <text style="color:black"><text style="color:#ff9f2b;font-size:40rpx">{{item.house.price}}</text>万元</text>
+        </view>
+      </view>
+    </view>
+    <button class="btn-default">评价经纪人</button>
+  </view>
+</view>

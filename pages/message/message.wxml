@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="message-wrap">
+    <navigator url="url" class="message-item">
+      <image src="/images/p007.png" class="msg-img"></image>
+      <view class="content-wrap">
+        <text class="msg-title msg-t">订单助手</text>
+        <view class="msg-dec msg-t">您收到一条看房请求</view>
+        <text class="msg-time">2016-08-10</text>
+      </view>
+    </navigator>
+    <navigator url="url" class="message-item">
+      <image src="/images/p008.png" class="msg-img"></image>
+      <view class="content-wrap">
+        <text class="msg-title msg-t">系统通知</text>
+        <view class="msg-dec msg-t">厢货搬家，耍你三角地按手机按时间哦点击</view>
+        <text class="msg-time">2016-08-12</text>
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<!--投诉建议-->
+<view class="container">
+  <!--吐槽-->
+  <view class="comment-wrap">
+    <view class="text-wrap">
+      <textarea class="text-box" vaule="{{comment}}" bindinput="textChange" maxlength="{{tn}}" placeholder-class="input-default" auto-height placeholder="请输入内容" />
+      <text class="text-tip">{{tnum}} / <text class="cm-color">{{tn}}</text></text>
+    </view>
+
+  </view>
+  <view class="imgBox-wrap">
+    <view class="cn-title">
+      <view class="span">上传凭证</view>
+    </view>
+    <view class="img-box">
+      <image src="{{item}}" class="img-item" wx:for="{{imgList}}" wx:for-item="item" bindtap="clearImgChange" data-index="{{index}}" wx:key="img" />
+      <image src="/images/addFile.png" class="img-item" bindtap="imgFileChange" />
+    </view>
+  </view>
+  <view class="btn-wrap">
+    <button class="btn-default" bindtap="subChange">提交审核</button>
+  </view>
+</view>

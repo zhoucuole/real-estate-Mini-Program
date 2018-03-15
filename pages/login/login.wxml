@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="logo-wrap">
+    <image src="/images/logo.png" class="logo-img" mode="widthFix"></image>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="login-item">
+    <image src="/images/ph.png" class="icon-default"></image>
+    <input placeholder="请输入手机号码" placeholder-class="input-default" name="phone" />
+    </view>
+    <view class="login-item">
+    <image src="/images/lock.png" class="icon-default"></image>
+    <input placeholder="请输入密码" type="password" placeholder-class="input-default" name="psd" />
+    </view>
+    <view class="tip-wrap">
+    <navigator url="../reBack/reBack" class="forget-text">忘记密码？</navigator>
+    </view>
+    <view class="btn-wrap">
+     <button formType="submit" class="btn-default login-btn">登录</button>
+    </view>
+  </form>
+  <view class="reg-wrap">
+<text>没有账号？</text><navigator url="../register/register" class="cm-color">立即注册</navigator>
+  </view>
+</view>

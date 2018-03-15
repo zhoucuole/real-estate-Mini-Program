@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view bindscrolltolower="scroll" scroll-y="true" class="main-body">
+    <import src="../listTemp/listTemp.wxml" />
+    <template is="listTemp" data="{{list:listData,flag:tab_flag}}" />
+  </scroll-view>
+</view>

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="bg-wrap">
+    <view class="pb-wrap">
+      <navigator url="../publish/publish" class="pb-item">
+
+        <text>二手房</text>
+      </navigator>
+
+      <navigator url="../publishShop/publishShop" class="pb-item">
+      
+        <text>商铺</text>
+      </navigator>
+      <navigator url="../publishOffice/publishOffice" class="pb-item">
+
+        <text>写字楼</text>
+      </navigator>
+    </view>
+  </view>
+</view>

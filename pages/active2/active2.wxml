@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="tab-bar">
+    <text data-flag="house" data-key="tab_flag" data-url="/room/recommend" bindtap="tab_change" class="{{tab_flag=='house'?'tab-text tab-active':'tab-text'}}">送装修的房子</text>
+    <text data-flag="police" data-key="tab_flag" data-url="/room/urgent" bindtap="tab_change" class="{{tab_flag=='police'?'tab-text tab-active':'tab-text'}}">低首付的单位</text>
+  </view>
+  <view class="main-body">
+
+    <scroll-view wx:if="{{tab_flag=='house'}}" class="scroll" data-url="/room/recommend" scroll-y bindscrolltolower="scroll">
+      <view class="house-cell" wx:key="{{index}}" wx:for="{{room}}">
+        <image src="{{'https://'+item.avatar}}"></image>
+        <text>{{item.title}}</text>
+        <text wx:if="{{item.room_type=='1'}}">{{item.variety_zh}} | {{item.room}}室{{item.hall}}厅{{item.toilet}}卫 | {{item.area}}m²</text>
+        <text wx:if="{{item.room_type=='2'}}">开盘时间：{{item.age_format}}</text>
+        <text wx:if="{{item.room_type=='5'}}">{{item.property}} | {{item.variety_zh}} | {{item.area}}m²</text>
+        <text wx:if="{{item.room_type=='6'}}">{{item.building}} | {{item.property}} | {{item.area}}m²</text>
+        <text wx:if="{{item.room_type=='2'}}">
+          <text class="big-font">{{item.unit_price}}</text>元/m²</text>
+        <text wx:else>
+          <text class="big-font">{{item.price}}</text>万</text>
+        <button class="btn-default" data-id='{{item.id}}' bindtap="toRoomChange">立即预约</button>
+      </view>
+    </scroll-view>
+    <!-- 急售房源 -->
+    <scroll-view wx:if="{{tab_flag=='police'}}" class="scroll" data-url="/room/urgent" scroll-y bindscrolltolower="scroll">
+      <navigator url="{{'../roomDetail/roomDetail?id='+item.id}}" class="tmpitem-box" wx:for="{{room}}">
+        <view class="zany">
+          <view class="img-wrap-z">
+            <image src="{{'https://'+item.avatar}}" class="img"></image>
+            <!-- 已下架 -->
+            <view class="off-the-shelf" wx:if="{{flag=='2'}}">
+              <view>已下架</view>
+            </view>
+          </view>
+          <view class="tmp-content">
+            <view class="{{flag=='2'?'tmp-name color-ccc':'tmp-name'}}">{{item.title}}</view>
+            <view wx:if="{{item.room_type=='1'}}" class="tmp-dec">{{item.village}} | {{item.room_hall_zh}} | {{item.area}}m²</view>
+            <view wx:if="{{item.room_type=='2'}}" class="tmp-dec">{{item.variety_zh}} | 开盘时间:{{item.age_format}}</view>
+            <view wx:if="{{item.room_type=='6'}}" class="tmp-dec">{{item.building}} | {{item.property}} | {{item.floor}}层 | {{item.area}}m²</view>
+            <view wx:if="{{item.room_type=='5'}}" class="tmp-dec">{{item.property}} | {{item.variety_zh}} | {{item.floor}}层 | {{item.area}}m²</view>
+            <view wx:if="{{item.room_type=='1'||item.room_type=='2'}}" class="tmp-dec z-tags">
+              <view class="tmp-i" wx:if="{{item.room_type=='1'||item.room_type=='2'}}" wx:for="{{item.feature_json}}" wx:for-item="i">{{i}}</view>
+            </view>
+            <view class="tmp-dec" wx:if="{{item.room_type=='2'}}">
+              <text class="{{flag=='2'?'tmp-price color-ccc':'tmp-price'}}">{{item.unit_price}}元/m²</text>
+            </view>
+            <view wx:else class="tmp-dec">
+              <text class="{{flag=='2'?'tmp-price color-ccc':'tmp-price'}}">{{item.price}}</text>
+              <text class="{{flag=='2'?'tmp-tip color-ccc':'tmp-tip'}}">万</text>
+              <text class="temp-dprice">{{item.unit_price}}元/m²</text>
+            </view>
+          </view>
+        </view>
+        <view class="item-tip">
+          "领创地产急售房源"
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,374 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-bottom:  130rpx;
+}
+.banner-box {
+  position: relative;
+}
+.banner-box .img-box{
+  width: 100%;
+}
+.imgdata-box {
+  position: absolute;
+  color: #fff;
+  letter-spacing: 2rpx;
+  font-size: 30rpx;
+  padding: 15rpx 30rpx;
+  bottom: 0;
+  right: 0;
+}
+.loveBtn {
+  height: 64rpx;
+  width: 64rpx;
+  background-color: rgba(0,0,0,.6);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 30rpx;
+  right: 30rpx;
+
+}
+.loveBtn image {
+  width: 45rpx;
+  height: 45rpx;
+}
+.item-box {
+  background: #fff;
+  padding: 30rpx;
+}
+.room-title {
+  font-size: 30rpx;
+}
+.room-dec {
+  margin-top: 20rpx;
+  display: flex;
+}
+.dec-item {
+  font-size: 24rpx;
+  padding: 3rpx 12rpx;
+  border: 1px solid #cccccc;
+  color: #cccccc;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+}
+.sec-box {
+  margin-top: 20rpx;
+}
+.sec-bottom {
+  border-bottom: 1px solid #f2f2f2;
+}
+.sec-noneBottom {
+  border: none;
+  padding-right: 0;
+}
+.show-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item-sec {
+  border-right: 1px solid #f2f2f2;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+
+}
+.item-sec:last-child {
+  border: none;
+}
+.item-sec .sec-text {
+  color: #ffa83c;
+  text-align: center;
+
+}
+.item-sec .bt-text {
+  color: #cccccc;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.cn-title .dc-color {
+  color: #999;
+  font-size: 24rpx;
+}
+.detail-box {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.no-padding-top {
+  padding-top: 0;
+}
+
+.detail-box .item-text {
+  margin-bottom: 20rpx;
+  width: 33.3%;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+
+}
+.detail-box .item-text .item-u {
+  color: #999;
+  margin-right: 2rpx;
+}
+.detail-box .item-text .text-p {
+  color: #ffa83c;
+  
+}
+.detail-box .item-text:nth-child(3n) {
+  padding-right: 0;
+}
+.detail-box .item-text:last-child {
+  width: 100%;
+}
+.new-box .item-text {
+  margin-bottom: 20rpx;
+}
+.new-box .item-text .item-u {
+  color: #999;
+  margin-right: 2rpx;
+}
+.new-box .item-text .text-p {
+  color: #ffa83c;
+  
+}
+.agent-box {
+  display: flex;
+  padding: 20rpx 0;
+}
+.about-item {
+  border-bottom: 1px solid #f2f2f2;
+}
+.about-item:last-child {
+  border-bottom: none;
+}
+.agent-logo {
+  width: 100rpx;
+  height: 100rpx;
+  flex:0 0 auto;
+
+  border-radius: 50%;
+}
+.agent-dec {
+  flex: 1 1 auto;
+  padding-left: 20rpx;
+}
+.agent-title .agent-name{
+  font-size: 30rpx;
+}
+.agent-title .ag-tip {
+  margin-left: 20rpx;
+  padding: 6rpx 15rpx;
+  border-radius: 5rpx;
+  background: #ffdc02;
+}
+.agent-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  color: #66acdd;
+}
+.map-tip {
+  padding: 30rpx 0 0 0;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.map-tip .tip-text {
+  width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.map-image {
+  width: 100%;
+  height: 250rpx;
+}
+.scorll-wrap {
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+}
+.sc-item {
+  margin-right: 50rpx;
+  display: inline-block;
+  width: 250rpx;
+}
+.sc-item:nth-last-of-type(1) {
+  margin-right: 0;
+}
+.sc-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sc-box image{
+  height: 250rpx;
+  width: 250rpx;
+}
+.sc-item .title {
+  margin-top: 20rpx;
+}
+.sc-item .sc-text {
+  margin-top: 15rpx;
+  color: #999;
+}
+.sc-item .text {
+  margin-top: 15rpx;
+}
+.nav-wrap {
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+  left: 0;
+  display: flex;
+  height: 110rpx;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #f2f2f2;
+  
+}
+.nav-wrap .nav-item {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+  border-right: 1px solid #f2f2f2;
+
+}
+.rev-btn {
+  flex-grow: 2!important;
+  background: #ff9800;
+  color: #fff;
+  border-right: none;
+
+}
+.user-box {
+  padding-top: 20rpx;
+  padding-bottom: 60rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.user-box:last-child {
+
+  border-bottom: none;
+}
+.user-box .user-title {
+  display: flex;
+  align-items: center;
+
+}
+.user-box .user-title .user-logo {
+  width: 80rpx;
+  border-radius: 50%;
+  height: 80rpx;
+  flex: 0 0 auto;
+}
+.user-box .user-title .user-name {
+
+  padding-left: 20rpx;
+
+  flex: 1 1 auto;
+}
+.user-box .user-info {
+  position: relative;
+}
+.star-box {
+  margin: 20rpx 0;
+  display: flex;
+
+}
+.user-dec {
+  
+}
+.star-box image {
+  margin: 0 5rpx;
+}
+.user-box  .user-time {
+  position: absolute;
+  bottom: -40rpx;
+  right: 0;
+  color: #999;
+}
+.comment-box {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+}
+.comment-box text {
+  margin-left: 10rpx;
+}
+.reservation-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.6);
+}
+
+.reservation-content {
+  border-radius: 10rpx;
+  background: #fff;
+  width: 700rpx;
+  box-sizing: border-box;
+  position: relative;
+  padding: 30rpx 60rpx 70rpx 60rpx;
+}
+.reservation-title {
+  font-size: 32rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.res-default {
+   color: #666;
+  font-size: 28rpx;
+  font-weight: normal;
+  z-index: 1 !important;
+  font-family: 'Helvetica Neue',
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 arial,
+                 "微软雅黑",
+                 "Microsoft YaHei",
+                 SimHei,
+                 "Helvetica Neue",
+                 sans-serif !important;
+}
+.res-close-btn {
+  width: 55rpx;
+  height: 55rpx;
+  position:absolute;
+  top: 30rpx;
+  right: 40rpx;
+  z-index: 1;
+}
+.reser-item {
+  margin: 20rpx 0;
+  position: relative;
+}
+.reser-item input {
+  border: 1px solid #f2f2f2;
+  padding:  25rpx 20rpx;
+}
+
+.reser-btn {
+  margin-top: 50rpx;
+}
+.no-comment{
+  display: flex;
+  justify-content: center;
+  padding: 30rpx;
+}
+.room-active{
+  margin: 0;
+  padding: 20rpx;
+}

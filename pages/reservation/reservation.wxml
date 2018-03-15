@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y class="scroll-view" bindscrolltolower="scroll">
+    <view class="reservation-cell" wx:for="{{reservationList}}">
+      <view class="house">
+        <view class="img-wrap">
+          <image src="{{'https://'+item.avatar}}"></image>
+        </view>
+        <!--  二手房-->
+        <view class="house-info" wx:if="{{item.room_type=='1'}}">
+          <text>{{item.title}}</text>
+          <text>
+            <text class="color">{{item.price}}</text> 万元 | {{item.area}}m²</text>
+          <text>{{item.room_hall_zh}} | {{item.orientation_zh}} | {{item.decoration_zh}}</text>
+        </view>
+        <!--新房-->
+        <view class="house-info" wx:if="{{item.room_type=='2'}}">
+          <text>{{item.title}}</text>
+          <text>
+            <text class="color">{{item.price}}</text> 万元 | {{item.area}}m²</text>
+          <text>{{item.room_hall_zh}} | {{item.orientation_zh}} | {{item.decoration_zh}}</text>
+        </view>
+        <!--商铺-->
+        <view class="house-info" wx:if="{{item.room_type=='5'}}">
+          <text>{{item.title}}</text>
+          <text>
+            <text class="color">{{item.price}}</text> 万元 | {{item.area}}m²</text>
+          <text>{{item.property}} | {{item.variety_zh}} | {{item.decoration_zh}}</text>
+        </view>
+        <!--写字楼-->
+        <view class="house-info" wx:if="{{item.room_type=='6'}}">
+          <text>{{item.title}}</text>
+          <text>
+            <text class="color">{{item.price}}</text> 万元 | {{item.area}}m²</text>
+          <text>{{item.room_hall_zh}} | {{item.orientation_zh}} | {{item.decoration_zh}}</text>
+        </view>
+        <view class="statu" wx:if="{{item.is_cancel=='2'}}">
+          <text wx:if="{{item.status=='4'}}">不通过</text>
+          <text wx:if="{{item.status=='1'}}">等待看房</text>
+          <text wx:if="{{item.status=='2'}}">审核中</text>
+        </view>
+      </view>
+      <view class="my">
+        <text>经纪人信息</text>
+        <view class="my-tab" bindtap="toPhone" data-phone="{{item.phone}}">
+          <image src="../../images/ph-9a.png"></image>{{item.phone}}</view>
+        <view class="my-tab">
+          <image src="../../images/name.png"></image>{{item.name}}</view>
+        <view class="my-tab">
+          <image src="../../images/time.png"></image>{{item.otime_format}}</view>
+      </view>
+      <view class="btn">
+        <view wx:if="{{item.is_cancel=='2'&&item.status!='4'}}" bindtap="cancelChange" data-index="{{index}}" data-id="{{item.id}}">取消预约</view>
+        <view wx:elif="{{item.is_cancel=='2'&&item.status=='4'}}" data-id="{{item.id}}">审核不通过</view>
+        <!--<view wx:if="{{item.statu!='已取消'}}">更改预约</view>-->
+        <view wx:else>已取消预约</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

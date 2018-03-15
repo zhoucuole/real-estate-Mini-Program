@@ -1,0 +1,156 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+.search-wrap {
+  width: 100%;
+  position: absolute;
+  top: 30rpx;
+}
+
+.search-box {
+  width: 625rpx;
+  margin: 0 auto;
+  height: 70rpx;
+  box-sizing: border-box;
+  border-radius: 5rpx;
+  padding: 0 15rpx;
+  line-height: 70rpx;
+  background: #fff;
+  position: relative;
+}
+
+.msg-btn {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 15rpx;
+}
+
+.search-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 80rpx;
+  height: 100%;
+}
+
+.search-box .span {
+  color: #ddd;
+  position: absolute;
+  top: 0;
+  right: 60rpx;
+}
+
+.search-btn {
+  right: 15rpx;
+  position: absolute;
+  top: 19rpx;
+}
+
+.control-wrap {
+  background: #fff;
+}
+
+.control-wrap .sel-wrap {
+  display: flex;
+  width: 100%;
+  background: #f2f2f2;
+  height: 82rpx;
+}
+
+.sel-wrap .item-btn {
+  flex: 1 1 auto;
+  text-align: center;
+  line-height: 82rpx;
+}
+
+.sel-wrap .item-btn.act {
+  background: #fff;
+}
+
+.sel-title {
+  padding: 50rpx 0;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.control-wrap .sel-box {
+  padding-bottom: 50rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 1px #ccc;
+  margin-bottom: 20rpx;
+}
+
+.sel-item {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sel-item .sl-icon {
+  width: 55rpx;
+  height: 60rpx;
+}
+
+.sel-item text {
+  margin-top: 10rpx;
+}
+
+.cm-content {
+  padding: 30rpx;
+  position: relative;
+}
+
+.cm-content .img {
+  width: 100%;
+  height: 275rpx !important;
+  border-radius: 10rpx;
+}
+
+.cm-content .hot-wrap {
+  position: absolute;
+  top: 15%;
+  background: #fff;
+  right: 50rpx;
+  width: 240rpx;
+  padding: 20rpx 20rpx 20rpx 35rpx;
+  box-sizing: border-box;
+}
+
+.hot-wrap .hot-title {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  position: relative;
+  padding-left: 0;
+}
+
+.hot-title .h-icon {
+  height: 10rpx;
+  margin-right: 8rpx;
+  width: 10rpx;
+  left: -15rpx;
+  position: absolute;
+  background: #fd9800;
+  border-radius: 50%;
+  display: block;
+}
+
+.hot-wrap .hot-time {
+  margin-top: 8rpx;
+  text-align: right;
+  font-size: 20rpx;
+  color: #ccc;
+}

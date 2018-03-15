@@ -1,0 +1,32 @@
+<!--注册-->
+<view class="container">
+  <view class="logo-wrap">
+    <image src="/images/logo.png" class="logo-img" mode="widthFix"></image>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="login-item">
+    <image src="/images/ph.png" class="icon-default"></image>
+    <input placeholder="请输入手机号码" bindinput="phoneChange"  placeholder-class="input-default" name="phone" />
+    </view>
+    <view class="login-item">
+    <image src="/images/rds.png" class="icon-default"></image>
+    <input placeholder="验证码" placeholder-class="input-default" name="code" class="code-input" />
+    <button bindtap="sendSMS" class="btn-default code-btn" data-bool="{{codeType.bool}}" >{{codeType.text}}</button>
+    </view>
+    <view class="login-item">
+    <image src="/images/lock.png" class="icon-default"></image>
+    <input placeholder="请输入密码" type="password" placeholder-class="input-default" name="psd" />
+    </view>
+    <view class="tip-wrap">
+    <checkbox-group  name="reader">
+    <checkbox value="1"  checked="true" color="#333"/>
+    <text>我已阅读并同意</text>
+</checkbox-group>
+    <navigator url="url" class="forget-text cm-color">《用户服务协议》</navigator>
+    </view>
+    <view class="btn-wrap">
+     <button formType="submit" class="btn-default register-btn">注册</button>
+    </view>
+  </form>
+
+</view>

@@ -1,0 +1,82 @@
+{
+  "pages": [
+        "pages/index/index",
+    "pages/login/login",
+
+    "pages/news/news",
+    "pages/newDetail/newDetail",
+    "pages/applyRefund/applyRefund",
+    "pages/logs/logs",
+    "pages/message/message",
+    "pages/roomList/roomList",
+    "pages/roomDetail/roomDetail",
+    "pages/otherHouse/otherHouse",
+    "pages/agentHouse/agentHouse",
+    "pages/agentCommentList/agentCommentList",
+    "pages/commentNewHouseList/commentNewHouseList",
+    "pages/user/user",
+    "pages/changePassword/changePassword",
+    "pages/changePhone/changePhone",
+    "pages/person/person",
+    "pages/active2/active2",
+    "pages/record/record",
+    "pages/reservation/reservation",
+    "pages/publish/publish",
+    "pages/publishShop/publishShop",
+    "pages/myHouse/myhouse",
+    "pages/publishSelect/publishSelect",
+    "pages/publishOffice/publishOffice",
+    "pages/newHouse/newHouse",
+    "pages/commentNewHouse/commentNewHouse",
+    "pages/agentList/agentList",
+    "pages/collection/collection",
+    "pages/agent/agent",
+    "pages/oneYuan/oneYuan",
+    "pages/reBack/reBack",
+    "pages/register/register",
+    "pages/reservationAdvance/reservationAdvance",
+    "pages/modifyReservation/modifyReservation",
+    "pages/complain/complain",
+    "pages/reservationDeposit/reservationDeposit",
+    "pages/reservationOrder/reservationOrder",
+    "pages/commentAgent/commentAgent",
+    "pages/house/house"
+  ],
+  "tabBar": {
+    "color": "#333",
+    "backgroundColor": "#fff",
+    "selectedColor": "#333",
+    "list": [
+      {
+        "iconPath": "images/home-pre.png@2x.png",
+        "selectedIconPath": "images/home@2x.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/activity-pre.png@2x.png",
+        "selectedIconPath": "images/activitypng@2x.png",
+        "pagePath": "pages/active2/active2",
+        "text": "活动"
+      },
+      {
+        "iconPath": "images/purchase-pre.png@2x.png",
+        "selectedIconPath": "images/purchase.png@2x.png",
+        "pagePath": "pages/oneYuan/oneYuan",
+        "text": "一元置业"
+      },
+      {
+        "iconPath": "images/user-pre.png@2x.png",
+        "selectedIconPath": "images/user.png@2x.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#303030",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#FFF"
+  }
+}

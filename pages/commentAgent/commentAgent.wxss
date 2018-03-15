@@ -1,0 +1,85 @@
+/**index.wxss**/
+
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+  padding-top: 30rpx;
+}
+
+.agent-wrap {
+  background: #fff;
+  margin: 0 30rpx 30rpx 30rpx;
+  padding: 30rpx;
+  flex-direction: column;
+  box-shadow: 0rpx 4rpx 8rpx #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+.agent-logo {
+  width: 130rpx;
+  border-radius: 50%;
+  height: 130rpx;
+  margin-bottom: 40rpx;
+}
+
+.agent-title {
+  display: flex;
+  font-size: 32rpx;
+}
+
+.agent-icon {
+  background: #fedb00;
+  padding: 4rpx 10rpx;
+  border-radius: 5rpx;
+  margin-left: 20rpx;
+}
+
+.phone-wrap {
+  margin-top: 30rpx;
+  display: flex;
+  font-size: 32rpx;
+}
+
+.agent-phone {
+  color: #71b8e1;
+}
+
+.star-wrap {
+  display: flex;
+  padding: 40rpx 0;
+}
+
+.star-icon {
+  width: 45rpx;
+  height: 45rpx;
+  margin: 0 10rpx;
+}
+
+.comment-wrap {
+  background: #fff;
+}
+
+.text-wrap {
+  position: relative;
+  padding: 35rpx 30rpx;
+}
+
+.text-box {
+  height: 220rpx !important;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx 60rpx 20rpx;
+  border: 1px solid #dcdcdc;
+  border-radius: 10rpx;
+}
+.text-tip {
+  position: absolute;
+  right: 90rpx;
+  font-size: 30rpx;
+  top: 210rpx;
+}
+.btn-wrap {
+  margin-top: 100rpx;
+  padding: 0 30rpx;
+}

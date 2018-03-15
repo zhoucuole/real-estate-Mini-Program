@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+  <!--经纪人信息-->
+  <view class="agent-wrap">
+    <!--星级-->
+
+    <view class="star-wrap">
+      <view class="classname">价格</view>
+      <image data-id="1" data-key="price" bindtap="starChange" src="{{star.price >= 1 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="2" data-key="price" bindtap="starChange" src="{{star.price >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="3" data-key="price" bindtap="starChange" src="{{star.price >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="4" data-key="price" bindtap="starChange" src="{{star.price >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="5" data-key="price" bindtap="starChange" src="{{star.price >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+    </view>
+    <view class="star-wrap">
+      <view class="classname">地段</view>
+      <image data-id="1" data-key="place" bindtap="starChange" src="{{star.place >= 1 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="2" data-key="place" bindtap="starChange" src="{{star.place >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="3" data-key="place" bindtap="starChange" src="{{star.place >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="4" data-key="place" bindtap="starChange" src="{{star.place >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="5" data-key="place" bindtap="starChange" src="{{star.place >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+    </view>
+    <view class="star-wrap">
+      <view class="classname">配套</view>
+      <image data-id="1" data-key="matching" bindtap="starChange" src="{{star.matching >= 1 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="2" data-key="matching" bindtap="starChange" src="{{star.matching >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="3" data-key="matching" bindtap="starChange" src="{{star.matching >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="4" data-key="matching" bindtap="starChange" src="{{star.matching >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="5" data-key="matching" bindtap="starChange" src="{{star.matching >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+    </view>
+    <view class="star-wrap">
+      <view class="classname">交通</view>
+      <image data-id="1" data-key="traffic" bindtap="starChange" src="{{star.traffic >= 1 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="2" data-key="traffic" bindtap="starChange" src="{{star.traffic >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="3" data-key="traffic" bindtap="starChange" src="{{star.traffic >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="4" data-key="traffic" bindtap="starChange" src="{{star.traffic >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="5" data-key="traffic" bindtap="starChange" src="{{star.traffic >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+    </view>
+    <view class="star-wrap">
+      <view class="classname">环境</view>
+      <image data-id="1" data-key="environment" bindtap="starChange" src="{{star.environment >= 1 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="2" data-key="environment" bindtap="starChange" src="{{star.environment >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="3" data-key="environment" bindtap="starChange" src="{{star.environment >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="4" data-key="environment" bindtap="starChange" src="{{star.environment >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="5" data-key="environment" bindtap="starChange" src="{{star.environment >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+    </view>
+
+  </view>
+  <!--备注信息-->
+  <view class="comment-wrap">
+    <view class="cn-title">
+      <view class="span">详细描述</view>
+    </view>
+    <view class="text-wrap">
+      <textarea class="text-box" vaule="{{comment}}" bindinput="textChange" maxlength="{{tn}}" placeholder-class="input-default" auto-height placeholder="觉得这个楼盘怎么样？一起来吐槽吧！" />
+      <text class="text-tip">{{tnum}} / {{tn}}</text>
+    </view>
+
+  </view>
+  <view class="btn-wrap">
+    <button class="btn-default" bindtap="subChange">提交</button>
+  </view>
+</view>

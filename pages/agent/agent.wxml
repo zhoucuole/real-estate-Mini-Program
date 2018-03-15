@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="agent-header">
+    <view class="header-img">
+      <image src="{{'https://'+agent_info.avatar}}"></image>
+    </view>
+    <view class="header-info">
+      <view class="header-row-one">
+        <view class="header-name">{{agent_info.name}}</view>
+        <view class="header-tag">经纪人</view>
+      </view>
+      <!--<view class="header-address">{{agent_info.address}}</view>-->
+      <view class="header-history">
+        <text>历史成交: {{agent_info.history}}套</text>
+        <text>最近带看: {{look_count}}次</text>
+      </view>
+    </view>
+    <view class="header-evaluate">
+      <view class="header-score">{{agent_info.score}}</view>
+      <view class="header-count">共{{comment_count}}人评价</view>
+    </view>
+  </view>
+  <view class="agent-evaluate">
+    <navigator url="" class="cn-title">
+      <view class="span">用户评价({{comment_count}})</view>
+      <navigator url="{{'../agentCommentList/agentCommentList?id='+agent_info.id}}'" class="span-tem">
+        <text>全部</text>
+        <image src="/images/right.png" class="icon-default" />
+      </navigator>
+    </navigator>
+    <view class="evaluate-cell" wx:for="{{comment}}">
+      <view class="evaluate-person">
+        {{item.phone}}
+        <view class="evaluate-tag">买房者</view>
+      </view>
+      <view class="evaluate-context">
+        <text class="evaluate-context-body">{{item.content}}</text>
+        <text class="time">{{item.ctime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="agent-house">
+    <navigator url="{{'../agentHouse/agentHouse?id='+agent_info.id}}" class="cn-title">
+      <view class="span">TA的在售房源({{room_count}})</view>
+      <view class="span-tem">
+        <text>全部</text>
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <import src="../listTemp/listTemp.wxml" />
+    <template is="listTemp" data="{{list:listData}}" />
+  </view>
+
+  <view bindtap="toPhone" data-phone="{{agent_info.phone}}" class="agent-footer">
+    <view class="img-wrap">
+      <image src="../../images/phone-white.png"></image>
+    </view>
+    <text>电话咨询</text>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+<view class='text-wrap'>
+  <textarea placeholder="请填写退款原因" auto-focus class="text-box" bindinput="textChange" placeholder-class="input-default"/>
+</view>
+<view class="btn-wrap">
+<button class="btn-default" bindtap="subChange">提交审核</button>
+</view>
+</view>

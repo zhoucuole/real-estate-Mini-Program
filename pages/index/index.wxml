@@ -1,0 +1,106 @@
+<!--首页-->
+<view class="container">
+  <!--banner块-->
+  <swiper indicator-dots autoplay indicator-color="#fff" indicator-active-color="#fedb00" interval="2000" circular>
+    <block wx:for="{{advertise}}">
+      <swiper-item>
+        <image mode="widthFix" src="{{'https://'+item.goods_img}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--search块-->
+  <!--<view class="search-wrap">
+    <view class="search-box">
+      <input class="search-input input" placeholder-class="input-default" placeholder="请输入楼龄、面积、总价" value="{{searchInput}}" />
+      <view class="span">|</view>
+      <image src="/images/search.png" class="icon-default search-btn" />
+    </view>
+    <!--<image src="/images/msg.png" class="msg-btn" bindtap="msgChange"></image>
+  </view>-->
+
+  <!--操作区-->
+  <view class="control-wrap">
+    <view class="sel-wrap">
+      <view class="{{selValue == 1?'item-btn act':'item-btn'}}" data-id="1" bindtap="selChange">我要找房</view>
+      <view class="{{selValue == 2?'item-btn act':'item-btn'}}" data-id="2" bindtap="selChange">我是业主</view>
+    </view>
+    <view class="sel-content" wx:if="{{selValue == 1}}">
+      <view class="sel-title">精选房源</view>
+      <view class="sel-box">
+        <view class="sel-item" data-id="1" bindtap="naChange">
+          <image src="/images/p001.png" class="icon-default sl-icon" />
+          <text>二手房</text>
+        </view>
+        <view class="sel-item" data-id="2" bindtap="naChange">
+          <image src="/images/p002.png" class="icon-default sl-icon" />
+          <text>一手房</text>
+        </view>
+        <view class="sel-item" data-id="5" bindtap="naChange">
+          <image src="/images/p003.png" class="icon-default sl-icon" />
+          <text>商铺</text>
+        </view>
+        <view class="sel-item" data-id="6" bindtap="naChange">
+          <image src="/images/p004.png" class="icon-default sl-icon" />
+          <text>写字楼</text>
+        </view>
+        <view class="sel-item" data-id="3" bindtap="naChange">
+          <image src="/images/p006.png" class="icon-default sl-icon" />
+          <text>资讯顾问</text>
+        </view>
+
+      </view>
+    </view>
+    <view class="sel-content" wx:else>
+      <view class="sel-title">有空闲房源？你可以选择</view>
+      <view class="sel-box">
+        <view class="sel-item" data-id="4" bindtap="naChange">
+          <image src="/images/p005.png" class="icon-default sl-icon" />
+          <text>我要放盘</text>
+        </view>
+        <view class="sel-item" data-id="3" bindtap="naChange">
+          <image src="/images/p006.png" class="icon-default sl-icon" />
+          <text>资讯顾问</text>
+        </view>
+
+
+      </view>
+    </view>
+
+
+  </view>
+  <!--最新资讯-->
+  <view class="con-box">
+    <navigator url="../news/news" class="cn-title">
+      <view class="span">最新资讯</view>
+      <view class="span-tem">
+        <text>全部</text>
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <navigator url="{{'../newDetail/newDetail?id='+news.id}}" class="cm-content">
+      <image mode="widthFix" src="{{'https://'+news.news_img}}" class="img" />
+
+      <!--热点新闻-->
+      <view class="hot-wrap">
+        <view class="hot-title">
+          <text class="h-icon"></text>热点</view>
+        <view class="hot-show">{{news.title}}</view>
+        <view class="hot-time">{{news.ctime}}</view>
+      </view>
+
+
+    </navigator>
+  </view>
+  <!--推荐二手房-->
+  <view class="con-box">
+    <view class="cn-title">
+      <view class="span">店长推介</view>
+    </view>
+    <!--引入列表模板-->
+    <import src="../listTemp/listTemp.wxml" />
+    <template is="listTemp" data="{{list:listData}}" />
+
+  </view>
+
+
+</view>

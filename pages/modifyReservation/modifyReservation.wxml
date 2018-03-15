@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit" class="form">
+    <view class="row">
+      <label for="name">姓名</label>
+      <input name="name" type="text" placeholder="请输入真实姓名" placeholder-class="input-default" class="cm-input" value="{{info.name}}"/>
+    </view>
+    <view class="row">
+      <label for="phone">联系方式</label>
+      <input name="phone" type="number" placeholder="请输入联系方式" placeholder-class="input-default" class="cm-input" value="{{info.phone}}"/>
+    </view>
+    <view class="row">
+      <label for="name">期待看房时间</label>
+      <picker bindchange="dateChange" name='time' mode="date" class="cm-input" value="{{info.time}}" start="2017-01-01" end="2099-01-01">
+      <input name="time" type="text" placeholder="请选择时间" placeholder-class="input-default" class="cm-input" value="{{info.time}}" disabled/>
+      <view class="cm-hidden-wrap"></view>
+      </picker>
+    </view>
+    <button class="btn-default" form-type="submit">保存修改</button>
+  </form>
+</view>

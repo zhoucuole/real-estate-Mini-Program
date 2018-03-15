@@ -1,0 +1,160 @@
+/**index.wxss**/
+
+.container {
+  background: #f2f2f2;
+  padding-bottom: 130rpx;
+}
+
+.agent-header {
+  background: white;
+  padding: 50rpx 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.header-img {
+  height: 100%;
+  width: 90rpx;
+  margin-right: 20rpx;
+  display: flex;
+  align-self: flex-start;
+}
+
+.header-img>image {
+  height: 90rpx;
+  width: 90rpx;
+}
+
+.header-info {
+  width: 430rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.header-row-one {
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  flex: 1 1 100%;
+  font-weight: bold;
+}
+
+.header-name {
+  display: flex;
+  align-items: center;
+}
+
+.header-tag {
+  margin-left: 20rpx;
+  padding: 10rpx 15rpx;
+  font-size: 22rpx;
+  color: #000;
+  background: #ffda00;
+  border-radius: 10rpx;
+  font-weight: 500;
+}
+
+.header-address, .header-history {
+  flex: 1 1 100%;
+  color: #9a9a9a;
+  font-size: 24rpx;
+}
+
+.header-address {
+  margin-bottom: 10rpx;
+}
+
+.header-history>text:nth-of-type(1) {
+  margin-right: 20rpx;
+}
+
+.header-evaluate {
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  height: 100%;
+}
+
+.header-score {
+  text-align: center;
+  flex: 1 1 100%;
+  color: #fc2629;
+  font-size: 30rpx;
+  margin-bottom: 25rpx;
+}
+
+.header-count {
+  font-size: 22rpx;
+  color: #9a9a9a;
+}
+
+.agent-evaluate {
+  background: white;
+  margin-bottom:20rpx;
+}
+
+.evaluate-cell {
+  border-bottom: 1rpx solid #f2f2f2;
+  padding: 30rpx 30rpx;
+  color: #9a9a9a;
+  font-size: 22rpx;
+}
+
+.evaluate-person {
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.evaluate-tag {
+  border: 1px solid #f2f2f2;
+  padding: 6rpx 14rpx;
+  margin-left: 30rpx;
+  border-radius: 6rpx;
+}
+
+.evaluate-context {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.evaluate-context-body {
+  font-size: 26rpx;
+  color: #000;
+}
+
+.agent-house{
+  background: white;
+}
+
+.agent-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fe9801;
+  color:white;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.img-wrap{
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+}
+.img-wrap>image{
+  width: 45rpx;
+  height: 45rpx;
+}
+.agent-footer>image{
+  flex: 1 1 100%;
+}

@@ -1,0 +1,47 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+}
+.comment-wrap {
+  background: #fff;
+}
+
+.text-wrap {
+  position: relative;
+  padding: 35rpx 30rpx;
+}
+
+.text-box {
+  height: 375rpx !important;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx 60rpx 20rpx;
+
+}
+.text-tip {
+  color: #999;
+  position: absolute;
+  right: 50rpx;
+  font-size: 30rpx;
+  top: 360rpx;
+}
+.imgBox-wrap {
+  background: #fff;
+  margin-top: 40rpx;
+}
+.btn-wrap {
+  margin-top: 100rpx;
+  padding: 0 30rpx;
+}
+.img-box {
+  padding: 45rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-item {
+  width: 145rpx;
+  height: 145rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}

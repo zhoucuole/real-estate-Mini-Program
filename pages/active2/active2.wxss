@@ -1,0 +1,115 @@
+/**active.wxss**/
+
+.container {
+  background: #f2f2f2;
+}
+
+.zany {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.tab-bar {
+  display: flex;
+  padding: 0 82rpx;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  background: #fff;
+}
+
+.tab-text {
+  box-sizing: border-box;
+  border-bottom: 6rpx solid #fff;
+  padding: 0 15rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tab-active {
+  border-bottom-color: #fedb00;
+}
+
+.main-body {
+  margin-bottom: 0;
+  padding-bottom: 20rpx;
+}
+.scroll{
+  height: 1000rpx;
+}
+.house-cell {
+  margin: 40rpx 30rpx;
+  position: relative;
+  background: #fff;
+  padding: 25rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.house-cell>image {
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 30rpx;
+}
+
+.house-cell>text:nth-of-type(1) {
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+  flex: 1 1 100%;
+}
+
+.house-cell>text:nth-of-type(2) {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  flex: 1 1 100%;
+  color: #ccc;
+}
+
+.big-font {
+  font-size: 36rpx;
+}
+
+.house-cell>text:nth-of-type(3) {
+  font-size: 24rpx;
+  flex: 1 1 100%;
+  color: #fb9801;
+}
+
+.house-cell>button {
+  position: absolute;
+  bottom: 45rpx;
+  right: 23rpx;
+  background: #fedb00;
+  font-size: 28rpx;
+  border: 0;
+}
+
+.house-cell>button::after {
+  content: none;
+}
+
+.tmpitem-box {
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  margin: 20rpx 0;
+}
+
+.item-wrap {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+.item-tip {
+  margin-top: 30rpx;
+  display: flex;
+  flex: 1 1 100%;
+  background: #f2f2f2;
+  height: 70rpx;
+  align-items: center;
+  padding: 0 20rpx;
+  color: #9a9a9a;
+  font-size: 24rpx;
+}

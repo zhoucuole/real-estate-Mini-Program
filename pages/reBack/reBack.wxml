@@ -1,0 +1,29 @@
+<!--找回密码-->
+<view class="container">
+
+  <form bindsubmit="formSubmit">
+    <view class="login-item">
+    <image src="/images/ph.png" class="icon-default"></image>
+    <input placeholder="手机号" bindinput="phoneChange"  placeholder-class="input-default" name="phone" />
+    
+    </view>
+    <view class="login-item">
+    <image src="/images/rds.png" class="icon-default"></image>
+    <input placeholder="验证码" placeholder-class="input-default" name="code" class="code-input" />
+    <button bindtap="sendSMS" class="btn-default code-btn" data-bool="{{codeType.bool}}" >{{codeType.text}}</button>
+    </view>
+    <view class="login-item">
+    <image src="/images/lock.png" class="icon-default"></image>
+    <input placeholder="新密码" type="password" placeholder-class="input-default" name="psd" />
+    </view>
+     <view class="login-item">
+    <image src="/images/lock.png" class="icon-default"></image>
+    <input placeholder="确认密码" type="password" placeholder-class="input-default" name="rpsd" />
+    </view>
+   
+    <view class="btn-wrap">
+     <button formType="submit" class="btn-default register-btn">确定</button>
+    </view>
+  </form>
+
+</view>

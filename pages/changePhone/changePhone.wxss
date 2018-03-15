@@ -1,0 +1,58 @@
+/**index.wxss**/
+.container {
+
+}
+.logo-wrap {
+  padding: 20rpx 0;
+}
+.logo-img {
+  width: 100%;
+  height: auto;
+}
+.login-item {
+  position: relative;
+  padding: 50rpx 75rpx 0 75rpx;
+}
+.login-item .icon-default{
+  position: absolute;
+  top: 70rpx;
+  left: 100rpx;
+}
+.login-item input {
+  width: 100%;
+  border-bottom: 1px solid #999;
+  padding: 0 10rpx 0 80rpx;
+  box-sizing: border-box;
+  height: 75rpx;
+}
+.tip-wrap {
+
+  display: flex;
+  padding: 45rpx 85rpx;
+}
+.btn-wrap {
+  margin-top: 100rpx;
+  padding: 0 75rpx; 
+}
+.register-btn {
+  line-height: 3;
+  margin-top: 50rpx;
+  border-radius: 100rpx;
+}
+.reg-wrap {
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.code-input {
+  padding-right: 200rpx!important;
+}
+.code-btn {
+  position: absolute;
+  right: 85rpx;
+  top: 50rpx;
+  font-size: 24rpx;
+  width: 240rpx;
+}

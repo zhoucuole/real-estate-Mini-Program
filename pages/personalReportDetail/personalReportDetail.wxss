@@ -1,0 +1,43 @@
+/**index.wxss**/
+
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+}
+
+.report-header {
+  padding-top: 35rpx;
+  margin-bottom: 50rpx;
+}
+
+.report-header>view {
+  background: white;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.text {
+  display: flex;
+  width: 200rpx;
+}
+
+.person, .time {
+  color: #9a9a9a;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.report-body {
+  background: white;
+  margin-bottom: 30rpx;
+}
+
+.context {
+  padding: 30rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,34 @@
+<!--我的收藏-->
+<view class="container">
+
+
+  <!--<view class="{{check == item.id ?' cm-move act':'cm-move'}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{item.id }}" wx:for="{{listData}}">
+
+    <navigator url="" class="tmpitem-box tmp-move-box">
+    <view class="img-box">
+      <image mode="widthFix" src="{{item.avatar}}" class="img"></image>
+      <text class="tip-text">写字楼</text>
+      </view>
+      <view class="tmp-content">
+        <view class="tmp-name">{{item.name}}</view>
+        <view class="tmp-dec">{{item.dec}}</view>
+        <view class="tmp-dec">
+          <text class="tmp-i" wx:for="{{item.type}}" wx:for-item="i">{{i==1?'满5年':''}}{{i==2?'地铁':''}}{{i==3?'随时看房':''}}</text>
+        </view>
+        <view class="tmp-dec">
+          <text class="tmp-price">{{item.price}}</text>
+          <text class="tmp-tip">万</text>
+          <text class="temp-dprice">{{item.unit_price}}/m²</text>
+        </view>
+      </view>
+    </navigator>
+    <view class="cm-movedel-btn" bindtap="delChange" data-id="{{item.id}}">删除</view>
+
+
+  </view>-->
+  <scroll-view scroll-y bindscrolltolower="scroll" class="scroll">
+    <!--引入列表模板-->
+    <import src="../listTemp/listTemp.wxml" />
+    <template is="listTemp" data="{{list:listData}}" />
+  </scroll-view>
+</view>

@@ -1,0 +1,123 @@
+/**active.wxss**/
+
+.container {
+  background: #f2f2f2;
+}
+
+.tab-bar {
+  display: flex;
+  padding: 0 82rpx;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.tab-bar>text {
+  padding: 0 15rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tab-active {
+  border-bottom: 6rpx solid #fedb00;
+}
+
+.main-body {
+  margin: 40rpx 30rpx;
+  margin-bottom: 0;
+  padding-bottom: 20rpx;
+}
+
+.house-cell {
+  position: relative;
+  background: #fff;
+  padding: 25rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.house-cell>image {
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 30rpx;
+}
+
+.house-cell>text:nth-of-type(1) {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  flex: 1 1 100%;
+}
+
+.house-cell>text:nth-of-type(2) {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  flex: 1 1 100%;
+}
+
+.color-yellow {
+  margin-right: 10rpx;
+  color: #fedb00;
+}
+
+.margin-control {
+  margin: 0 10rpx;
+}
+
+.house-cell>text:nth-of-type(3) {
+  font-size: 24rpx;
+  flex: 1 1 100%;
+  text-decoration: line-through;
+}
+
+.house-cell>button {
+  position: absolute;
+  bottom: 45rpx;
+  right: 23rpx;
+  background: #fedb00;
+  font-size: 28rpx;
+  border: 0;
+}
+
+.house-cell>button::after {
+  content: none;
+}
+
+.police-cell {
+  background: #fff;
+  padding: 40rpx 50rpx;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.police-cell>image {
+  height: 315rpx;
+  margin-bottom: 30rpx;
+}
+
+.police-title {
+  display: flex;
+  margin-bottom: 40rpx;
+}
+
+.police-context {
+  color: #9a9a9a;
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+.police-cell>view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.police-detail {
+  color: orange;
+}
+
+.police-time {
+  color: #9a9a9a;
+}

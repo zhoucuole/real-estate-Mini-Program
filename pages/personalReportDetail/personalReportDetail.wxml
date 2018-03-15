@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="report-header">
+    <view>
+      <text class="text">咨询人</text>
+      <text class="person">张三</text>
+    </view>
+    <view>
+      <text class="text">咨询时间</text>
+      <text class="time">2017年09月03日</text>
+    </view>
+  </view>
+
+  <view class="report-body">
+    <navigator url="" class="cn-title">
+      <view class="span">基本情况</view>
+    </navigator>
+    <view class="context">
+      {{base}}
+    </view>
+  </view>
+  <view class="report-body">
+    <navigator url="" class="cn-title">
+      <view class="span">专家分析报告</view>
+    </navigator>
+    <view class="context">
+      {{expert_report}}
+    </view>
+  </view>
+  <view class="report-body">
+    <navigator url="" class="cn-title">
+      <view class="span">专家推荐项目</view>
+    </navigator>
+    <view class="context">
+      {{expert_recommend}}
+    </view>
+  </view>
+</view>

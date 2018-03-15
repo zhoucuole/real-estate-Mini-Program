@@ -1,0 +1,24 @@
+/**index.wxss**/
+.container {
+  padding-bottom: 40rpx;
+}
+
+.tab{
+  height: 110rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  padding:0 30rpx;
+}
+.tab-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110rpx;
+  box-sizing: border-box;
+  border-bottom: 4rpx solid #ffffff;
+  width: 25%;
+}
+.item-active{
+  border-bottom-color: #fedb00;
+}

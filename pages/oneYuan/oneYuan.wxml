@@ -1,0 +1,203 @@
+<!--index.wxml-->
+<view class="container">
+  <!--步骤-->
+  <view class="header">
+    <text>一元预付置业体验</text>
+    <text>付款一元可获得适合自己的“个人置业规划报告”</text>
+
+    <!-- 流程图 -->
+    <view class="step-view">
+      <!--第一步-->
+      <view class="step-one">
+        <view class="arrow">
+          <view class="{{step=='1'?'main active-color-bg':'main'}}">
+            <view class="foot"></view>
+          </view>
+          <view class="{{step=='1'?'head active-color-bo':'head'}}"></view>
+        </view>
+        <view class="{{step=='1'?'line active-color-bo':'line'}}">
+        </view>
+        <view class="step-icon">
+          <view class="image-wrap">
+            <image wx-if="{{step=='1'}}" src="../../images/step-one-active.png"></image>
+            <image wx-if="{{step!='1'}}" src="../../images/step-one.png"></image>
+          </view>
+        </view>
+        <view class="context">
+          填写资料
+        </view>
+        <view class="tip color-white">
+          (三天后)
+        </view>
+      </view>
+
+      <!--第二步-->
+      <view class="step-two">
+        <view class="arrow">
+          <view class="{{step=='2'?'main active-color-bg':'main'}}">
+            <view class="foot"></view>
+          </view>
+          <view class="{{step=='2'?'head active-color-bo':'head'}}"></view>
+        </view>
+        <view class="{{step=='2'?'line active-color-bo':'line'}}">
+        </view>
+        <view class="step-icon">
+          <view class="image-wrap">
+            <image wx-if="{{step=='2'}}" src="../../images/step-two-active.png"></image>
+            <image wx-if="{{step!='2'}}" src="../../images/step-two.png"></image>
+          </view>
+        </view>
+        <view class="context">
+          付款1元
+        </view>
+        <view class="tip color-white">
+          (三天后)
+        </view>
+      </view>
+
+      <!--第三步-->
+      <view class="step-three">
+        <view class="arrow">
+          <view class="{{step=='3'?'main active-color-bg':'main'}}">
+            <view class="foot"></view>
+          </view>
+          <view class="{{step=='3'?'head active-color-bo':'head'}}"></view>
+        </view>
+        <view class="{{step=='3'?'line active-color-bo':'line'}}">
+        </view>
+        <view class="step-icon">
+          <view class="image-wrap">
+            <image wx-if="{{step=='3'}}" src="../../images/step-three-active.png"></image>
+            <image wx-if="{{step!='3'}}" src="../../images/step-three.png"></image>
+          </view>
+        </view>
+        <view class="context">
+          等待结果
+        </view>
+        <view class="tip">
+          (3天后)
+        </view>
+      </view>
+
+      <!--第四步-->
+      <view class="step-four">
+        <view class="arrow">
+          <view class="{{step=='4'?'main active-color-bg':'main'}}">
+            <view class="foot"></view>
+          </view>
+          <view class="{{step=='4'?'head active-color-bo':'head'}}"></view>
+        </view>
+        <view class="{{step=='4'?'line active-color-bo':'line'}}">
+        </view>
+        <view class="step-icon">
+          <view class="image-wrap">
+            <image wx-if="{{step=='4'}}" src="../../images/step-four-active.png"></image>
+            <image wx-if="{{step!='4'}}" src="../../images/step-four.png"></image>
+          </view>
+        </view>
+        <view class="context">
+          置业报告
+        </view>
+        <view class="tip color-white">
+          (三天后)
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--步骤-->
+  <!--
+    首期投入金额       advance
+    付款方式          payType
+    月供金额          mprice
+    购买面积          area
+    楼层             floorData
+    朝向            directionData
+    购房时间         time
+    小区配套         supportList
+    购房用途       purpose
+    是否装修         renovation
+  -->
+  <form bindsubmit="formSubmit">
+    <view class="form-wrap">
+      <view class="cn-title">
+        <view class="span">填写信息</view>
+      </view>
+      <view class="cm-input-item">
+        <text class="cm-input-name">首期投入金额</text>
+        <input type="digit" value="{{advance }}" name="advance" class="cm-input sm-input" placeholder-class="input-default" placeholder="请填写您的预算" />
+        <text class="cm-color">万</text>
+      </view>
+      <view class="cm-input-item">
+        <text class="cm-input-name cm-radio-text">付款方式</text>
+        <radio-group class="cm-radio-group" bindchange="payChange" name="payType">
+          <label class="radio" wx:for="{{payCheck}}">
+            <radio color="#fdb900" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <!--<view class="cm-input-item">
+        <text class="cm-input-name">月供金额</text>
+        <input type="digit" value="{{mprice}}" name="mprice" class="cm-input sm-input" placeholder-class="input-default" placeholder="请输入月供金额" />
+        <text class="cm-color">万</text>
+      </view>-->
+
+
+      <view class="cm-input-item sec-box">
+        <text class="cm-input-name"> 购房面积</text>
+        <input value="{{area}}" name="area" class="cm-input sm-input" bindinput="priceChange" placeholder-class="input-default" placeholder="购房面积" />
+        <text>m²</text>
+      </view>
+      <view class="cm-input-item">
+        <text class="cm-input-name">理想楼层</text>
+        <picker bindchange="floorChange" name='floorData' class="cm-input" value="{{floor}}" range="{{floorList}}">
+          <input type="text" placeholder="请选择楼层" class="cm-input" placeholder-class="input-default" class="cm-input" value="{{floorList[floor]}}" disabled/>
+          <view class="cm-hidden-wrap"></view>
+        </picker>
+      </view>
+      <view class="cm-input-item">
+        <text class="cm-input-name">理想朝向</text>
+        <picker bindchange="directChange" name='directionData' class="cm-input" value="{{direction}}" range="{{directionList}}">
+          <input type="text" placeholder="请选择朝向" class="cm-input" placeholder-class="input-default" class="cm-input" value="{{directionList[direction]}}" disabled/>
+          <view class="cm-hidden-wrap"></view>
+        </picker>
+      </view>
+      <view class="cm-input-item sec-box">
+        <text class="cm-input-name">购房用途</text>
+        <radio-group class="cm-radio-group" name="purpose">
+          <label class="radio" wx:for="{{purposeCheck}}">
+            <radio color="#fdb900" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <view class="cm-input-item">
+        <text class="cm-input-name">购房时间</text>
+        <picker bindchange="dateChange" name='time' mode="date" class="cm-input" value="{{time}}" start="2017-01-01" end="2099-01-01">
+          <input name="time" type="text" placeholder="请选择时间" class="cm-input" placeholder-class="input-default" class="cm-input" value="{{time}}" disabled/>
+          <view class="cm-hidden-wrap"></view>
+        </picker>
+      </view>
+      <view class="cm-input-item sec-box">
+        <text class="cm-input-name">是否带装修</text>
+        <radio-group class="cm-radio-group" name="renovation">
+          <label class="radio" wx:for="{{renovationCheck}}">
+            <radio color="#fdb900" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+
+    </view>
+    <view class="sec-box sec-noneMargin">
+      <view class="sec-title">小区配套</view>
+      <view class="sel-wrap">
+        <view class="{{item.check? 'sel-ic act':'sel-ic'}}" data-check="{{item.check}}" data-id="{{item.id}}" bindtap="selChange" wx:for="{{supportList}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="btn-wrap">
+      <button formType="submit" class="btn-default">确认提交并支付</button>
+      <view class="tip-text">
+        <image src="/images/rd.png" class='icon-default'></image>3天后出专属您的置业规划报告</view>
+    </view>
+
+  </form>
+
+</view>

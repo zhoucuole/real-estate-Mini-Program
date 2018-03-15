@@ -1,0 +1,166 @@
+<!--看房记录-->
+<view class="container">
+
+  <view class="search-box">
+    <view class="input-wrap">
+      <input type="text" placeholder="请输入楼盘名" placeholder-class="placeholder-class" value="{{searchText}}" bindinput="searchChange" />
+      <text>|</text>
+      <image bindtap="search" src="../../images/search.png"></image>
+    </view>
+    <picker bindchange="sortChange" range="{{sortWay}}" value="sort" mode="selector" class="btn-sort">排序</picker>
+  </view>
+
+  <!--条件筛选-->
+  <view wx:if="{{room_type=='1'}}" class="filter">
+    <view data-flag="price" bindtap="tabChange" class="filter-item">价格
+      <image wx:if="{{!show.price}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.price}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="structure" bindtap="tabChange" class="filter-item">户型
+      <image wx:if="{{!show.structure}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.structure}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="more" bindtap="tabChange" class="filter-item">更多
+      <image wx:if="{{!show.more}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.more}}" src="../../images/up.png"></image>
+    </view>
+  </view>
+  <!--条件筛选-->
+  <view wx:if="{{room_type=='2'}}" class="filter">
+    <view data-flag="price" bindtap="tabChange" class="filter-item">价格
+      <image wx:if="{{!show.price}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.price}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="structure" bindtap="tabChange" class="filter-item">户型
+      <image wx:if="{{!show.structure}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.structure}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="more" bindtap="tabChange" class="filter-item">更多
+      <image wx:if="{{!show.more}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.more}}" src="../../images/up.png"></image>
+    </view>
+  </view>
+  <!--条件筛选-->
+  <view wx:if="{{room_type=='5'}}" class="filter">
+    <view data-flag="price" bindtap="tabChange" class="filter-item">价格
+      <image wx:if="{{!show.price}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.price}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="structure" bindtap="tabChange" class="filter-item">面积
+      <image wx:if="{{!show.structure}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.structure}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="more" bindtap="tabChange" class="filter-item">类型
+      <image wx:if="{{!show.more}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.more}}" src="../../images/up.png"></image>
+    </view>
+  </view>
+  <!--条件筛选-->
+  <view wx:if="{{room_type=='6'}}" class="filter">
+    <view data-flag="price" bindtap="tabChange" class="filter-item">价格
+      <image wx:if="{{!show.price}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.price}}" src="../../images/up.png"></image>
+    </view>
+    <view data-flag="structure" bindtap="tabChange" class="filter-item">面积
+      <image wx:if="{{!show.structure}}" src="../../images/down.png"></image>
+      <image wx:if="{{show.structure}}" src="../../images/up.png"></image>
+    </view>
+  </view>
+
+
+
+  <!-- popup -->
+  <view wx:if="{{show.price==true||show.structure==true||show.more==true}}" class="popup">
+    <!-- price -->
+    <view wx:if="{{show.price}}" class="popup-structure">
+      <block wx:for="{{priceList}}">
+        <view data-flag="modal" bindtap="priceChange" data-max="{{item.max}}" data-min="{{item.min}}" data-name="{{item.name}}" class="{{item.name==selected?'popup-item cm-color':'popup-item'}}">{{item.name}}</view>
+      </block>
+      <form bindsubmit="priceSubmit">
+        <view class="popup-item user-defined">
+          自定义
+          <view class="number-wrap">
+            <input name="min" value="{{min_price}}" type="number" placeholder="最小" /> 一
+            <input name="max" value="{{max_price}}" type="number" placeholder="最大" /> 元
+          </view>
+          <button form-type="submit" class="btn-sure">确定</button>
+        </view>
+      </form>
+    </view>
+
+    <!-- structure -->
+    <view wx:if="{{show.structure}}" class="popup-structure">
+      <form wx:if="{{room_type=='1'||room_type=='2'}}" bindsubmit="structureSubmit">
+        <view class="popup-item room-hall">
+          <picker data-flag="shi" bindchange="structureChange" mode="selector" range="{{structureList.name}}" class="structure-picker" value="{{shi}}">
+            <input name="shi" type="text" class="structure-input" value="{{structureList.name[shi]}}" disabled/>
+            <text>室</text>
+          </picker>
+          <picker data-flag="ting" bindchange="structureChange" mode="selector" range="{{structureList.name}}" class="structure-picker" value="{{ting}}">
+            <input name="ting" type="text" class="structure-input" value="{{structureList.name[ting]}}" disabled/>
+            <text>厅</text>
+          </picker>
+          <picker data-flag="wei" bindchange="structureChange" mode="selector" range="{{structureList.name}}" class="structure-picker" value="{{wei}}">
+            <input name="wei" type="text" class="structure-input" value="{{structureList.name[wei]}}" disabled/>
+            <text>卫</text>
+          </picker>
+        </view>
+        <view class="popup-item room-hall">
+          <button form-type="submit" class="room-hall-button">确定</button>
+        </view>
+      </form>
+      <block wx:if="{{room_type=='5'||room_type=='6'}}" wx:for="{{areaList}}">
+        <view data-flag="modal" bindtap="areaChange" data-max="{{item.max}}" data-min="{{item.min}}" data-name="{{item.name}}" class="{{item.name==selected?'popup-item cm-color':'popup-item'}}">{{item.name}}</view>
+      </block>
+    </view>
+
+    <!-- more -->
+    <view wx:if="{{show.more}}" class="popup-structure">
+      <form wx:if="{{room_type=='1'}}" bindsubmit="moreSubmit">
+        <view class="sub-cell" wx:for="{{moreList1}}">
+          <view class="sub-title">{{item.group}}</view>
+          <view class="{{item.active==sub?'sub-item sub-active':'sub-item'}}" wx:for="{{item.subs}}" wx:for-item="sub" wx:for-index="iSub">
+            <input type="text" hidden="true" name="{{item.active==sub?item.name:''}}" value="{{iSub}}" />
+            <view data-key="moreList1" data-index="{{index}}" data-flag="{{sub}}" bindtap="subChange">{{sub}}</view>
+          </view>
+        </view>
+        <view class="sub-btn-group">
+          <view data-flag="modal" bindtap="tabChange">取消</view>
+          <button form-type="submit" bindtap="moreSubmit1">确定</button>
+        </view>
+      </form>
+      <form wx:if="{{room_type=='2'}}" bindsubmit="moreSubmit">
+        <view class="sub-cell" wx:for="{{moreList2}}">
+          <view class="sub-title">{{item.group}}</view>
+          <view class="{{item.active==sub?'sub-item sub-active':'sub-item'}}" wx:for="{{item.subs}}" wx:for-item="sub" wx:for-index="iSub">
+            <input type="text" hidden="true" name="{{item.active==sub?item.name:''}}" value="{{iSub}}" />
+            <view data-key="moreList2" data-index="{{index}}" data-flag="{{sub}}" bindtap="subChange">{{sub}}</view>
+          </view>
+        </view>
+        <view class="sub-btn-group">
+          <view data-flag="modal" bindtap="tabChange">取消</view>
+          <button form-type="submit" bindtap="moreSubmit2">确定</button>
+        </view>
+      </form>
+      <block wx:if="{{room_type=='5'}}" wx:for="{{varietyList}}">
+        <view data-flag="modal" bindtap="varietyChange" data-value="{{item.value}}" data-name="{{item.name}}" class="{{item.name==selected?'popup-item cm-color':'popup-item'}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- modal -->
+  <view wx:if="{{show.price==true||show.structure==true||show.more==true}}" bindtap="tabChange" data-flag="modal" class="modal"></view>
+
+
+  <!-- house list -->
+  <scroll-view scroll-top="{{scrollTop}}" scroll-with-animation="true" scroll-y="true" class="main-body">
+    <import src="../listTemp/listTemp.wxml" />
+    <template is="listTemp" data="{{list:listData}}" />
+  </scroll-view>
+
+
+  <!-- back-to-top -->
+  <view bindtap="backToTop" class="back-to-top">
+    <image src="/images/sort.png"></image>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+{
+  "name": "lingchan-dichan",
+  "version": "1.0.0",
+  "description": "一个房地产中介小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoucuole/-.-.git"
+  },
+  "keywords": [
+    "wx"
+  ],
+  "author": "zhoucuole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoucuole/-.-/issues"
+  },
+  "homepage": "https://github.com/zhoucuole/-.-#readme"
+}

@@ -1,0 +1,29 @@
+<!--看房记录-->
+<view class="container">
+  <view class="search-box">
+    <view class="input-wrap">
+      <input type="text" placeholder="请输入经纪人的姓名或电话" placeholder-class="placeholder-class" bindinput="searchChange"/>
+      <text>|</text>
+      <image bindtap="search" src="../../images/search.png"></image>
+    </view>
+    <picker bindchange="dateChange" range="{{sortWay}}" value="sortValue" mode="selector" class="btn-sort">排序</picker>
+  </view>
+
+  <scroll-view scroll-top="{{top}}" scroll-y bindscrolltolower="scroll" class="scroll">
+    <navigator url="{{'../agent/agent?id='+item.id}}" class="agent-cell" wx:for="{{agent_list}}">
+      <image src="{{'https://'+item.avatar}}"></image>
+      <view class="cell-info">
+        <view>
+          <text>{{item.name}}</text>
+        </view>
+        <view>
+          <image src="../../images/phone.png"></image>
+          <text catchtap="toPhone" data-phone="{{item.phone}}">{{item.phone}}</text>
+        </view>
+      </view>
+      <view class="cell-score">
+        <text>{{item.score}}</text>评分
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

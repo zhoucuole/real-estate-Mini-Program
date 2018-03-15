@@ -1,0 +1,123 @@
+.container {
+  position: relative;
+  padding-bottom: 20rpx;
+  background: #f2f2f2;
+}
+.cm-input-item {
+  background: #fff;
+  padding: 0 30rpx;
+  position: relative;
+  height: 115rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.cm-input-item .cm-input{
+  width: 370rpx;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+}
+.cm-input-name {
+  width: 170rpx;
+  padding-right: 10rpx;
+
+}
+.cm-radio-text {
+  width: 60%;
+}
+.cm-radio-group {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+.btn-wrap {
+  padding: 30rpx 30rpx 20rpx 20rpx;
+  bottom:0;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+.sec-wrap {
+  margin-top: 20rpx;
+}
+.tip-text .icon-default {
+  position: absolute;
+  left: 60rpx;
+  top: 20rpx;
+}
+.tip-text {
+  position: relative;
+  padding: 20rpx 70rpx 20rpx 100rpx;
+  color: #999;
+  display: flex;
+  font-size: 24rpx;
+
+}
+.sec-box {
+  background: #fff;
+  margin-top: 30rpx;
+}
+.sec-noneMargin{
+  margin: 0;
+}
+.sec-title {
+  padding: 40rpx 30rpx 30rpx 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.sec-title text {
+  color: #999;
+}
+.sec-box .sel-wrap {
+  display: flex;
+  padding: 30rpx;
+  flex-wrap: wrap;
+}
+.sel-bottom {
+  border-bottom: 1px solid #f2f2f2;
+}
+.sel-wrap .sel-ic {
+  margin-right: 30rpx;
+  padding: 15rpx 30rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.sel-wrap .sel-ic:nth-child(4n) {
+  margin-right: 0;
+}
+.sel-wrap .sel-ic.act {
+  background: #fef000;
+  border-color: #fef000;
+}
+.text-wrap {
+  position: relative;
+  padding: 35rpx 30rpx;
+}
+
+.text-box {
+  height: 320rpx !important;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx 60rpx 20rpx;
+  border: 1px solid #dcdcdc;
+  border-radius: 10rpx;
+}
+.text-tip {
+  position: absolute;
+  right: 90rpx;
+  font-size: 30rpx;
+  top: 210rpx;
+}
+.img-box {
+  padding: 45rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-item {
+  width: 145rpx;
+  height: 145rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}

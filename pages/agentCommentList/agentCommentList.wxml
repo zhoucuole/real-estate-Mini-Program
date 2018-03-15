@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="score">
+      <view>综合评分</view>
+      <view class="cm-color">{{comments_total.total}}分</view>
+      <view class="star-wrap2">
+        <image wx:if="{{comments_total.total>=1}}" src="/images/stary.png" class="star-icon"></image>
+        <image wx:if="{{comments_total.total>=2}}" src="/images/stary.png" class="star-icon"></image>
+        <image wx:if="{{comments_total.total>=3}}" src="/images/stary.png" class="star-icon"></image>
+        <image wx:if="{{comments_total.total>=4}}" src="/images/stary.png" class="star-icon"></image>
+        <image wx:if="{{comments_total.total>=5}}" src="/images/stary.png" class="star-icon"></image>
+      </view>
+    </view>
+  </view>
+  <!--经纪人信息-->
+  <view class="main">
+    <!--星级-->
+    <block wx:for="{{comments}}">
+      <view class="comment-cell">
+        <view class="user-info">
+          <image src="{{item.avatar}}"></image>
+          {{item.name}}
+        </view>
+        <view class="star-wrap">
+          <image wx:if="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5>=1}}" src="/images/stary.png" class="star-icon"></image>
+          <image wx:if="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5>=2}}" src="/images/stary.png" class="star-icon"></image>
+          <image wx:if="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5>=3}}" src="/images/stary.png" class="star-icon"></image>
+          <image wx:if="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5>=4}}" src="/images/stary.png" class="star-icon"></image>
+          <image wx:if="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5>=5}}" src="/images/stary.png" class="star-icon"></image>
+        </view>
+        <view class="context">
+          <text>{{item.content}}</text>
+          <view>{{item.ctime}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <navigator url="{{'../commentAgent/commentAgent?id=' + room_id}}" class="footer">
+    <view>我要写点评</view>
+    <image src="/images/comment.png"></image>
+  </navigator>
+</view>

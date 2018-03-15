@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="report-cell" wx:for="{{report_list}}">
+    <view class="time">
+      <text>{{item.f_time}}</text>
+    </view>
+    <view class="cell-body">
+      <view class="cell-title">
+        个人置业报告
+      </view>
+      <view class="cell-content">
+        <text>咨询人：{{item.person}}</text>
+        <text>咨询时间：{{item.z_time}}</text>
+      </view>
+      <navigator to class="cell-footer">
+        <text>查看详情</text>
+        <image src="../../images/right.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<!--预付诚意金-->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="cm-input-item">
+      <text class="cm-input-name">姓名</text>
+      <input type="text" value="{{name}}" name="name" class="cm-input" bindinput="nameChange" placeholder-class="input-default" placeholder="请填写您的真实姓名" />
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">电话</text>
+      <input type="text" value="{{phone}}" name="phone" class="cm-input" bindinput="phoneChange" placeholder-class="input-default" placeholder="请填写您的联系电话" />
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">还价金额</text>
+      <input type="digit" value="{{price}}" name="price" class="cm-input" bindinput="priceChange" placeholder-class="input-default" placeholder="请填写您的期望成交价" />
+      <text class="cm-color">万</text>
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">诚意金</text>
+      <input type="digit" value="{{advance}}" name="advance" class="cm-input" bindinput="AdvChange" placeholder-class="input-default" placeholder="请填写您想支付的诚意金额" />
+      <text class="cm-color">万</text>
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name cm-radio-text">是否延迟到店签订合同时间</text>
+      <radio-group class="cm-radio-group" bindchange="radioChange" name="check">
+        <label class="radio" wx:for="{{items}}">
+          <radio color="#fdb900" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view> 
+   
+
+    <view class="btn-wrap">
+    <button formType="submit" class="btn-default">提交审核并付款</button>
+    <view class="tip-text"><image src="/images/tip.png" class='icon-default'></image> 诚意金可在订单生成起一星期内退还，平台将在24小时内将审核结果通知您</view>
+    </view>
+  </form>
+</view>

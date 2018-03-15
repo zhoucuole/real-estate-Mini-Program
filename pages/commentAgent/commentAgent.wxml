@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+  <!--经纪人信息-->
+  <view class="agent-wrap">
+    <image src="{{agentData.avatar}}" class="agent-logo"></image>
+
+    <view class="agent-title">
+      <text>{{agentData.name}}</text>
+      <text class="agent-icon">经纪人</text>
+    </view>
+    <view class="phone-wrap" bindtap="toPhone" data-phone="{{agentData.phone}}">
+      <image src="/images/phone.png" class="icon-default" />
+      <text class="agent-phone">{{agentData.phone}}</text>
+
+    </view>
+    <!--星级-->
+    <view class="star-wrap">
+      <image data-id="1" bindtap="starChange" src="{{star >= 1 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="2" bindtap="starChange" src="{{star >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="3" bindtap="starChange" src="{{star >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="4" bindtap="starChange" src="{{star >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+      <image data-id="5" bindtap="starChange" src="{{star >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="star-icon"></image>
+    </view>
+    <!--<view class="star-wrap" wx:elif="star == 1">
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+    </view>
+    <view class="star-wrap" wx:elif="star == 2">
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+    </view>
+    <view class="star-wrap" wx:elif="star == 3">
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+    </view>
+    <view class="star-wrap" wx:elif="star == 4">
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/starn.png" class="star-icon"></image>
+    </view>
+    <view class="star-wrap" wx:elif="star == 5">
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+      <image src="/images/stary.png" class="star-icon"></image>
+    </view>-->
+
+  </view>
+  <!--备注信息-->
+  <view class="comment-wrap">
+    <view class="cn-title">
+      <view class="span">备注信息</view>
+    </view>
+    <view class="text-wrap">
+      <textarea class="text-box" vaule="{{comment}}" bindinput="textChange" maxlength="{{tn}}" placeholder-class="input-default" auto-height placeholder="请输入内容" />
+      <text class="text-tip">{{tnum}} / {{tn}}</text>
+    </view>
+
+  </view>
+  <view class="btn-wrap">
+    <button class="btn-default" bindtap="subChange">提交</button>
+  </view>
+</view>

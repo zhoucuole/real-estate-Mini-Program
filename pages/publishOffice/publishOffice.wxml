@@ -1,0 +1,127 @@
+<!--我要放盘-->
+<!--
+  小区   quart
+  面积   area
+  标题  proname
+  单价  fprice
+  售价   price
+  物业 property
+  年份   year
+  楼盘 sale
+  房型 roomData
+  楼层 floorData
+  朝向 directionData
+  佣金 check
+  地址 address
+  房源特色 supportList
+  装修类型 typeList
+  图片   imgList
+  描述   comment
+  联系人 name
+  联系电话 phone
+
+
+
+-->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="cm-input-item">
+      <text class="cm-input-name">标题</text>
+      <input type="text" value="{{proname}}" name="proname" class="cm-input" placeholder-class="input-default" placeholder="请输入房源信息标题" />
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">售价</text>
+      <input type="digit" value="{{price}}" name="price" class="cm-input" bindinput="priceChange" placeholder-class="input-default" placeholder="请填写您的期望成交价" />
+      <text class="cm-color">万元</text>
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">单价</text>
+      <input type="digit" value="{{fprice}}" name="fprice" class="cm-input" bindinput="priceChange" placeholder-class="input-default" placeholder="请输入单价" />
+      <text class="cm-color">元/㎡</text>
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">物业</text>
+      <input type="text" value="{{property}}" name="property" class="cm-input" placeholder-class="input-default" placeholder="请输入所属物业" />
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">面积</text>
+      <input type="text" value="{{area}}" name="area" class="cm-input" placeholder-class="input-default" placeholder="请填写房源的建筑面积" />
+    </view>
+    
+     <view class="cm-input-item">
+      <text class="cm-input-name">楼盘</text>
+      <input type="text" value="{{sale}}" name="building" class="cm-input" placeholder-class="input-default" placeholder="请填写所属楼盘" />
+    </view>
+   
+    <view class="cm-input-item">
+      <text class="cm-input-name">楼层</text>
+      <picker bindchange="floorChange" name='floorData' class="cm-input" value="{{floor}}" range="{{floorList}}">
+        <input type="text" placeholder="请选择楼层" class="cm-input" placeholder-class="input-default" class="cm-input" value="{{floorList[floor]}}" disabled/>
+        <view class="cm-hidden-wrap"></view>
+      </picker>
+    </view>
+     <!--<view class="cm-input-item">
+      <text class="cm-input-name">类型</text>
+      <picker bindchange="roomChange" name='roomData' class="cm-input" value="{{room}}" range="{{roomList}}">
+        <input type="text" placeholder="请选择您的类型" class="cm-input" placeholder-class="input-default" class="cm-input" value="{{roomList[room]}}" disabled/>
+        <view class="cm-hidden-wrap"></view>
+      </picker>
+    </view>-->
+    <!--<view class="cm-input-item">
+      <text class="cm-input-name">朝向</text>
+      <picker bindchange="directChange" name='directionData' class="cm-input" value="{{direction}}" range="{{directionList}}">
+        <input type="text" placeholder="请选择朝向" class="cm-input" placeholder-class="input-default" class="cm-input" value="{{directionList[direction]}}" disabled/>
+        <view class="cm-hidden-wrap"></view>
+      </picker>
+    </view>-->
+  <view class="cm-input-item" >
+      <text class="cm-input-name">房源位置</text>
+      <input type="digit" value="{{address.address}}" name="dprice" class="cm-input" bindinput="priceChange" placeholder-class="input-default" placeholder="选择房源地址" />
+      <view class="cm-hidden-wrap" bindtap="selMap"></view>
+    </view>
+    <view class="cm-input-item sec-wrap">
+      <text class="cm-input-name cm-radio-text">是否有佣金</text>
+      <radio-group class="cm-radio-group" bindchange="radioChange" name="check">
+        <label class="radio" wx:for="{{items}}">
+          <radio color="#fdb900" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="cm-input-item" wx:if="{{checked == 1}}">
+      <text class="cm-input-name">佣金</text>
+      <input type="digit" value="{{dprice}}" name="dprice" class="cm-input" bindinput="priceChange" placeholder-class="input-default" placeholder="请输入佣金" />
+      <text class="cm-color">万</text>
+    </view>
+    <view class="sec-box sec-wrap">
+      <view class="sec-title sec-nonebottom">房源描述 </view>
+
+      <view class="text-wrap">
+        <textarea class="text-box" name="comment" vaule="{{comment}}" bindinput="textChange" maxlength="{{tn}}" placeholder-class="input-default" auto-height placeholder="请详细描述你的房源，如小区环境，房屋产权，周边配套，交通情况等。" />
+   
+      </view>
+    </view>
+      <view class="sec-box sec-wrap">
+      <view class="sec-title">图片</view>
+   <view class="img-box">
+      <image src="{{item}}" class="img-item" wx:for="{{imgList}}" wx:for-item="item" bindtap="clearImgChange" data-index="{{index}}" wx:key="img" />
+      <image src="/images/pic.png" class="img-item" bindtap="imgFileChange" />
+    </view>
+    
+    </view>
+      <view class="sec-box sec-wrap">
+      <view class="cm-input-item">
+      <text class="cm-input-name">联系人</text>
+      <input type="text" value="{{name}}" name="name" class="cm-input" placeholder-class="input-default" placeholder="请填写联系人" />
+    </view>
+    <view class="cm-input-item">
+      <text class="cm-input-name">联系电话</text>
+      <input type="number" value="{{phone}}" name="phone" class="cm-input" placeholder-class="input-default" placeholder="请填写联系电话" />
+    </view>
+      </view>
+
+    <view class="btn-wrap">
+      <button formType="submit" class="btn-default">提交</button>
+     
+    </view>
+  </form>
+</view>

@@ -1,0 +1,76 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+.rev-item {
+  background: #fff;
+  margin-bottom: 30rpx;
+  display:flex;
+  flex-direction: column;
+}
+.rev-title {
+  height: 100rpx;
+  padding: 0 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #f2f2f2;
+  line-height: 100rpx;
+}
+.rev-box {
+  padding: 45rpx 30rpx;
+  display: flex;
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+}
+.img-box {
+  padding: 10rpx;
+  position: absolute;
+  top: 45rpx;
+  left: 30rpx;
+  border: 1px solid #f2f2f2;
+  width: 180rpx;
+  box-sizing: border-box;
+  height: 154rpx;
+}
+.rev-img {
+  width: 100%;
+  height: 100%;
+}
+.rev-wrap {
+  padding: 10rpx 20rpx;
+  padding-left: 200rpx;
+}
+.rev-wrap-title {
+  font-size: 32rpx;
+
+}
+.rev-dec {
+  font-size: 28rpx;
+  margin: 15rpx 0;
+}
+.rev-gray {
+  color: #999;
+}
+.control-wrap {
+  padding: 35rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.btn-wrap {
+  margin-bottom: 20rpx;
+}
+.rev-btn {
+  width: 265rpx;
+  float: right;
+}
+.tip-text {
+  display: flex;
+  justify-content: flex-end;
+  align-items:  center;
+}
+.tip-text text {
+  
+  margin-left: 5rpx;
+}

@@ -1,0 +1,33 @@
+/**index.wxss**/
+
+.container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50rpx;
+}
+
+image {
+  height: 400rpx;
+  width: 750rpx;
+}
+
+.news-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  padding: 30rpx;
+  text-align: center;
+}
+
+.news-time{
+  font-size: 24rpx;
+  padding: 20rpx;
+  text-align: center;
+  color: #ccc;
+}
+
+.news-context {
+  padding: 10rpx 30rpx;
+  text-indent: 56rpx;
+  font-size: 28rpx;
+}

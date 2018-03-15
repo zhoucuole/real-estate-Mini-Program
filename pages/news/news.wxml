@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y class="scroll-view" bindscrolltolower="scroll">
+    <block wx:for="{{news}}">
+      <navigator url="{{'../newDetail/newDetail?id='+item.id}}" class="new-cell">
+        <view class="cell-l">
+          <view class="cell-title">
+            {{item.lead}}
+          </view>
+          <view class="cell-context">
+            {{item.content_format}}...
+          </view>
+          <view class="cell-time">
+            {{item.ctime_format}}
+          </view>
+        </view>
+        <view class="cell-r">
+          <image src="{{'https://'+item.news_img}}"></image>
+        </view>
+      </navigator>
+    </block>
+  </scroll-view>
+</view>

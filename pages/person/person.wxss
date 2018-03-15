@@ -1,0 +1,21 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+}
+.logo-first {
+  height: 165rpx!important;
+
+}
+.logo-icon {
+  border-radius: 50%;
+  width: 100rpx;
+  margin-right: 20rpx;
+  height: 100rpx;
+}
+.per-text {
+  color: #333!important;
+}
+.btn-wrap {
+  padding: 130rpx 30rpx 0 30rpx;
+}

@@ -1,0 +1,286 @@
+/**app.wxss**/
+
+page {
+  height: 100%;
+  font-family: 'Helvetica Neue',
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 arial,
+                 "微软雅黑",
+                 "Microsoft YaHei",
+                 SimHei,
+                 "Helvetica Neue",
+                 sans-serif !important;
+}
+
+.container {
+  min-height: 100%;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+image {
+  width: 100%;
+  height: auto;
+}
+
+.input-default {
+  color: #ccc;
+  font-size: 28rpx;
+  font-weight: normal;
+  z-index: 1 !important;
+  font-family: 'Helvetica Neue',
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 arial,
+                 "微软雅黑",
+                 "Microsoft YaHei",
+                 SimHei,
+                 "Helvetica Neue",
+                 sans-serif !important;
+}
+
+.input {
+  font-family: 'Helvetica Neue',
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 arial,
+                 "微软雅黑",
+                 "Microsoft YaHei",
+                 SimHei,
+                 "Helvetica Neue",
+                 sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  font-family: 'Helvetica Neue',
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 arial,
+                 "微软雅黑",
+                 "Microsoft YaHei",
+                 SimHei,
+                 "Helvetica Neue",
+                 sans-serif !important;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.btn-default {
+  color: #fff;
+  background: #303030;
+}
+
+.icon-default {
+  height: 32rpx;
+  width: 32rpx;
+}
+
+.cm-color {
+  color: #fed900;
+}
+
+.cm-input {
+  font-size: 28rpx;
+  color: #333;
+  font-family: 'Helvetica Neue',
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 arial,
+                 "微软雅黑",
+                 "Microsoft YaHei",
+                 SimHei,
+                 "Helvetica Neue",
+                 sans-serif !important;
+}
+
+.tmp-move-box {
+  width: 100%;
+}
+
+.cm-move {
+  background: #fff;
+  position: relative;
+  display: flex;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.cm-movedel-btn {
+  background: #fd9800;
+  position: absolute;
+  top: 0;
+  right: -160rpx;
+  color: #fff;
+  height: 100%;
+  justify-content: center;
+  width: 160rpx;
+  align-items: center;
+  display: flex;
+}
+
+.cm-move.act {
+  transform: translateX(-160rpx);
+}
+
+.cm-hidden-wrap {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*公共项标题*/
+
+.cn-title {
+  display: flex;
+  align-items: center;
+  height: 95rpx;
+  justify-content: space-between;
+  padding: 0 30rpx 0 0;
+  font-size: 32rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.cn-title .span {
+  border-left: 6rpx solid #fedb00;
+  padding-left: 30rpx;
+}
+
+.cn-title .span-tem {
+  display: flex;
+  color: #999;
+  align-items: center;
+}
+
+/*公共房列表项*/
+
+.tmpitem-box {
+  display: flex;
+  padding: 40rpx 30rpx;
+  position: relative;
+}
+
+.tmpitem-box .img {
+  width: 275rpx;
+  height: 200rpx;
+}
+
+.tmpitem-box .tmp-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  flex: 0 1 auto;
+}
+.tmp-content{
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+.tmp-content .tmp-name {
+  font-size: 30rpx;
+}
+
+.tmp-content .tmp-dec {
+  font-size: 22rpx;
+  margin: 8rpx 0;
+  color: #ccc;
+}
+
+.tmp-content .tmp-dec .tmp-i {
+  font-size: 20rpx;
+  padding: 3rpx 10rpx;
+  border-radius: 5rpx;
+  border: 1px solid #ccc;
+  margin-right: 5rpx;
+  margin:2.5rpx 0;
+}
+
+.tmp-dec .tmp-tip {
+  color: #fe9803;
+  font-size: 20rpx;
+  margin-left: 4rpx;
+}
+
+.tmp-dec .tmp-price {
+  color: #fe9803;
+  font-size: 30rpx;
+}
+
+.tmp-dec .temp-dprice {
+  margin-left: 40rpx;
+}
+
+/*公告 列cell*/
+
+.cm-margin-top {
+  margin-top: 40rpx;
+}
+
+.cm-link-wrap {
+  background: #fff;
+}
+
+.cm-link-wrap .link-item {
+  display: flex;
+  border-bottom: 1px solid #f2f2f2;
+  height: 110rpx;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.cm-link-wrap .link-item  .link-dc {
+  display: flex;
+  align-items: center;
+}
+
+.cm-link-wrap .link-item .link-text {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.img-wrap-z {
+  position: relative;
+}
+/*已下架*/
+
+.off-the-shelf {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 275rpx;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.off-the-shelf>view {
+  border: 1rpx solid white;
+  padding: 12rpx 18rpx;
+}
+
+.color-ccc {
+  color: #ccc;
+}
+
+ .z-tags{
+   display: flex;
+   flex-wrap: wrap
+ }
+.noData{
+  text-align: center;
+  padding: 20rpx 0;
+}

@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <image src="{{'https://'+news.news_img}}"></image>
+  <text class="news-title">{{news.lead}}</text>
+  <text class="news-time">{{news.ctime}}</text>
+  <text class="news-context">{{news.content}}</text>
+</view>

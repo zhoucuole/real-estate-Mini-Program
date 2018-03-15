@@ -1,0 +1,25 @@
+<!--预付订单 -->
+<view class="container">
+  <view class="rev-item" wx:for="{{orderList}}">
+    <view class="rev-title">已预付诚意金{{item.pay}}元</view>
+    <view class="rev-box">
+      <view class="img-box">
+        <image src="{{item.avatar}}" class="rev-img"></image>
+      </view>
+      <view class="rev-wrap">
+        <view class="rev-wrap-title">{{item.name}}</view>
+        <view class="rev-dec">
+          <text class="rev-color">{{item.price}}</text>万元 | {{item.dath}}㎡</view>
+        <view class="rev-dec rev-gray">{{item.dec}}</view>
+      </view>
+    </view>
+    <view class="control-wrap" wx:if="{{item.type != 2}}"> 
+    <view class="btn-wrap">
+    <button class="btn-default rev-btn" wx:if="{{item.type == 0}}">申请退款</button>
+    <button class="btn-default rev-btn" wx:if="{{item.type == 1}}">已退款 </button>
+    </view>
+    <view class="tip-text" >
+    <image src="/images/tip.png" class="icon-default"/><text>自订单生成起，1星期内有效</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+}
+.message-wrap {
+  background: #fff;
+}
+.message-item {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+.msg-img {
+  height: 70rpx;
+  width:70rpx;
+}
+.content-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  padding-left: 20rpx;
+  flex-direction: column;
+  position: relative;
+}
+.msg-t {
+  margin-bottom: 20rpx;
+}
+.msg-title {
+  font-size: 32rpx;
+}
+.msg-dec {
+  font-size: 24rpx;
+  color: #999;
+  width: 460rpx;
+}
+.msg-time {
+  position: absolute;right: 30rpx;
+  top: 0;
+  font-size: 24rpx;
+  color: #999;
+}

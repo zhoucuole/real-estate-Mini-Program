@@ -1,0 +1,396 @@
+<!--房源详情-->
+<view class="container">
+  <!--头部banner-->
+  <view class="banner-box">
+    <image src="{{'https://'+room.avatar}}" mode="widthFix" class="img-box" data-src="{{'https://'+room.avatar}}" catchtap="prevImg"></image>
+    <view class="imgdata-box">1/{{room.gallery.detail.length+1}}</view>
+    <view class="loveBtn">
+      <image src="/images/loveed.png" class="icon-default" wx:if="{{loveCheck}}" bindtap="loveChange"></image>
+      <image src="/images/love.png" class="icon-default" wx:else bindtap="loveChange"></image>
+    </view>
+  </view>
+
+  <view class="item-box">
+    <view class="room-title">{{room.title}}</view>
+    <view class="room-dec" wx:if="{{room.room_type == '1' || room.room_type == '2'}}">
+      <!--是否二手房或新房-->
+      <text class="dec-item" wx:for="{{room.feature_json}}">{{item}}</text>
+    </view>
+  </view>
+
+  <!--头部banner end-->
+  <!--查看预约信息人数-->
+  <view class="item-box sec-box no-padding-top">
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">房源动态</view>
+    </view>
+    <view class="item-box sec-box show-wrap room-active">
+      <view class="item-sec">
+        <text class="bt-text">预约看房</text>
+        <text class="sec-text">{{room.reservation}}人</text>
+      </view>
+      <view class="item-sec">
+        <text class="bt-text">支付定金</text>
+        <text class="sec-text">0人</text>
+      </view>
+      <view class="item-sec">
+        <text class="bt-text">支付诚意金</text>
+        <text class="sec-text">0人</text>
+      </view>
+    </view>
+  </view>
+  <!--查看预约信息人数end-->
+  <!--房源详情信息  二手房-->
+  <view class="item-box" wx:if="{{room.room_type == '1'}}">
+    <view class="detail-box">
+      <view class="item-text">
+        <text class="item-u">售价:</text>
+        <text class="text-p">{{room.price}}万</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">年份:</text>
+        <text class="text-t">{{room.age_format}}年</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">面积:</text>
+        <text class="text-t">{{room.area}}㎡</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">房型:</text>
+        <text class="text-t">{{room.room_hall_zh}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">类型:</text>
+        <text class="text-t">{{room.variety_zh}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">楼层:</text>
+        <text class="text-t">{{room.floor}}层</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">朝向:</text>
+        <text class="text-t">{{room.orientation_zh}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">装修:</text>
+        <text class="text-t">{{room.decoration_zh}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">单价:</text>
+        <text class="text-t">{{room.unit_price}}元/㎡</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">小区:</text>
+        <text class="text-t">{{room.village}}</text>
+      </view>
+    </view>
+
+  </view>
+  <!--房源详情信息end-->
+  <!--房源详情信息  商铺-->
+  <view class="item-box" wx:if="{{room.room_type == '5'}}">
+    <view class="detail-box">
+      <view class="item-text">
+        <text class="item-u">售价:</text>
+        <text class="text-p">{{room.price}}万</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">单价:</text>
+        <text class="text-t">
+          <text class="cm-color">{{room.price}}</text>元/㎡</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">面积:</text>
+        <text class="text-t">{{room.area}}㎡</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">类型:</text>
+        <text class="text-t">{{room.variety_zh}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">楼层:</text>
+        <text class="text-t">{{room.floor}}层</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">装修:</text>
+        <text class="text-t">{{room.decoration_zh}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">物业:</text>
+        <text class="text-t">{{room.property}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">地址:</text>
+        <text class="text-t">{{room.address}}</text>
+      </view>
+    </view>
+
+  </view>
+  <!--房源详情信息end-->
+  <!--房源详情信息  写字楼-->
+  <view class="item-box" wx:if="{{room.room_type == '6'}}">
+    <view class="detail-box">
+      <view class="item-text">
+        <text class="item-u">售价:</text>
+        <text class="text-p">{{room.price}}万</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">单价:</text>
+        <text class="text-t">
+          <text class="cm-color">{{room.unit_price}}</text>元/㎡</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">面积:</text>
+        <text class="text-t">{{room.area}}㎡</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">楼层:</text>
+        <text class="text-t">{{room.floor}}层</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">楼盘:</text>
+        <text class="text-t">{{room.building}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">物业:</text>
+        <text class="text-t">{{room.property}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">地址:</text>
+        <text class="text-t">{{room.address}}</text>
+      </view>
+    </view>
+
+  </view>
+  <!--房源详情信息end-->
+  <!--房源详情信息  新楼盘-->
+  <view class="item-box" wx:if="{{room.room_type == '2'}}">
+    <view class="new-box">
+      <view class="item-text">
+        <text class="item-u">单价:</text>
+        <text class="text-t">
+          <text class="cm-color">{{room.unit_price}}</text>元/㎡</text>
+      </view>
+
+      <view class="item-text">
+        <text class="item-u">地址:</text>
+        <text class="text-t">{{room.address}}</text>
+      </view>
+      <view class="item-text">
+        <text class="item-u">开盘时间:</text>
+        <text class="text-t">{{room.age_format}}</text>
+      </view>
+    </view>
+
+  </view>
+  <!--房源详情信息end-->
+  <!--房源卖点   只在写字楼 和 商铺房-->
+  <view class="item-box sec-box no-padding-top" wx:if="{{room.room_type == '5' || room.room_type == '6' || room.room_type=='1'}}">
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">房源卖点</view>
+    </view>
+    <view class="classname">
+      <text decode>{{room.selling}}</text>
+    </view>
+  </view>
+  <!--房源描述end-->
+  <!--房源介绍-->
+  <view class="item-box sec-box no-padding-top" wx:if="{{room.room_type == '2'}}">
+
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">房源介绍</view>
+    </view>
+    <view class="classname">
+      <text decode>{{room.selling}}</text>
+    </view>
+  </view>
+  <!--楼盘动态end-->
+  <!--主力户型       仅在新楼盘        -->
+  <view class="item-box sec-box no-padding-top" wx:if="{{room.room_type == '2'}}">
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">主力户型</view>
+    </view>
+    <scroll-view scroll-x="true" class="scorll-wrap" style="width:100%;">
+      <block wx:for="{{room.household}}">
+        <view class="sc-item">
+          <view class="sc-box" catchtap="prevImg">
+            <image src="{{'https://'+item.avatar}}" mode="widthFix" />
+            <text class="title">{{item.title}}</text>
+            <text class="sc-text">{{item.subscribe}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+  </view>
+  <!--主力户型end-->
+  <!--用户点评-->
+  <view class="item-box sec-box no-padding-top" wx:if="{{room.room_type == '2'}}">
+    <navigator url="{{'../commentNewHouseList/commentNewHouseList?id='+room.id}}" class="cn-title sec-noneBottom">
+      <view class="span">用户点评</view>
+      <view class="span-tem">
+        <text>查看全部</text>
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <view class="user-box" wx:if="{{room.comment.length>0}}" wx:for="{{room.comment}}">
+      <view class="user-title">
+        <image src="{{item.avatar}}" class="user-logo"></image>
+        <text class="user-name">{{item.name}}</text>
+      </view>
+
+      <view class="user-info">
+        <view class="star-box">
+          <image data-id="1" bindtap="starChange" src="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5 >= 1?'/images/stary.png':'/images/starn.png'}}" class="icon-default"></image>
+          <image data-id="2" bindtap="starChange" src="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5 >= 2 ?'/images/stary.png':'/images/starn.png'}}" class="icon-default"></image>
+          <image data-id="3" bindtap="starChange" src="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5 >= 3 ?'/images/stary.png':'/images/starn.png'}}" class="icon-default"></image>
+          <image data-id="4" bindtap="starChange" src="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5 >= 4 ?'/images/stary.png':'/images/starn.png'}}" class="icon-default"></image>
+          <image data-id="5" bindtap="starChange" src="{{item.environment/5+item.location/5+item.match/5+item.price/5+item.transport/5 >= 5 ?'/images/stary.png':'/images/starn.png'}}" class="icon-default"></image>
+        </view>
+        <text class="user-dec">{{item.content}}</text>
+        <text class="user-time">{{item.ctime}}</text>
+      </view>
+    </view>
+    <view class="no-comment">
+      暂无评论...
+    </view>
+    <view bindtap="writeComment" class="comment-box">
+      <image src="/images/comment.png" class="icon-default"></image>
+      <text>我要写点评</text>
+    </view>
+  </view>
+  <!---->
+  <!--相关顾问        仅在新楼盘-->
+  <view class="item-box sec-box no-padding-top" wx:if="{{room.room_type == '2'}}">
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">相关顾问 </view>
+    </view>
+    <block wx:for="{{room.agency}}">
+      <view class="agent-box about-item">
+        <image src="{{'https://'+item.avatar}}" class="agent-logo"></image>
+        <view class="agent-dec">
+          <view class="agent-title">
+            <text class="agent-name">{{item.name}}</text>
+            <text class="ag-tip">经纪人</text>
+          </view>
+          <view class="agent-info" bindtap="toPhone" data-phone="{{item.phone}} ">
+            <image src="/images/phone.png" class="icon-default"></image>
+            <text class="agent-phone">{{item.phone}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!--相关顾问end-->
+
+  <!--经纪人信息  新楼盘不显示-->
+  <view class="item-box sec-box" wx:if="{{room.room_type != '2'}}">
+    <view class="agent-box">
+      <image src="{{'https://'+room.headlike}}" class="agent-logo"></image>
+      <view class="agent-dec">
+        <view class="agent-title">
+          <text class="agent-name">{{room.name}}</text>
+          <text class="ag-tip">经纪人</text>
+        </view>
+        <view class="agent-info" bindtap="toPhone" data-phone="{{room.phone}}">
+          <image src="/images/phone.png" class="icon-default"></image>
+          <text class="agent-phone">{{room.phone}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--经纪人信息end-->
+  <!--地图位置-->
+  <view class="item-box sec-box no-padding-top">
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">房源位置</view>
+    </view>
+    <view>
+      <image src="{{mapSrc}}" mode="widthFix" class="map-image"></image>
+    </view>
+    <view class="map-tip" bindtap="mapShow">
+      <view class="tip-text">地址： {{room.address}} </view>
+      <image src="/images/right.png" class="icon-default"></image>
+    </view>
+  </view>
+  <!--地图位置end-->
+  <!--风格效果图-->
+  <view wx:if="{{room_type!='6'}}" class="item-box sec-box no-padding-top">
+    <view class="cn-title sec-noneBottom">
+      <view class="span">风格效果图</view>
+    </view>
+    <scroll-view scroll-x="true" class="scorll-wrap" style="width:100%;">
+      <view class="sc-item" wx:if="{{room.gallery.fashion!=undefined}}">
+        <view class="sc-box" catchtap="prevImg2">
+          <image data-src="{{'https://'+room.gallery.fashion[0].src}}" src="{{'https://'+room.gallery.fashion[0].src}}" />
+          <text class="title">时尚简洁</text>
+          <text class="text">({{room.gallery.fashion.length}}张)</text>
+        </view>
+      </view>
+      <view class="sc-item" wx:if="{{room.gallery.japan!=undefined}}">
+        <view class="sc-box" catchtap="prevImg2">
+          <image data-src="{{'https://'+room.gallery.japan[0].src}}" src="{{'https://'+room.gallery.japan[0].src}}" />
+          <text class="title">日式风格</text>
+          <text class="text">({{room.gallery.japan.length}}张)</text>
+        </view>
+      </view>
+      <view class="sc-item" wx:if="{{room.gallery.europe!=undefined}}">
+        <view class="sc-box" catchtap="prevImg2">
+          <image data-src="{{'https://'+room.gallery.europe[0].src}}" src="{{'https://'+room.gallery.europe[0].src}}" />
+          <text class="title">欧式风格</text>
+          <text class="text">({{room.gallery.europe.length}}张)</text>
+        </view>
+      </view>
+
+    </scroll-view>
+
+  </view>
+  <!--风格效果图end-->
+  <!--猜您喜欢-->
+  <view class="item-box sec-box no-padding-top">
+    <view class="cn-title sec-noneBottom ">
+      <view class="span">猜您喜欢</view>
+    </view>
+    <!--引入列表模板-->
+    <import src="../listTemp/listTemp.wxml" />
+    <template is="listTemp" data="{{list:listData}}" />
+
+  </view>
+  <!--猜您喜欢end-->
+  <!--底部页面fixed---------------------------- -->
+  <view class="nav-wrap">
+    <navigator url="../reservationDeposit/reservationDeposit" class="nav-item">支付定金</navigator>
+    <navigator url="../reservationAdvance/reservationAdvance" class="nav-item">支付诚意金</navigator>
+    <view class="nav-item rev-btn" bindtap="resModeChange">预约看房</view>
+  </view>
+  <!--底部页面fixed  end---------------------------- -->
+
+
+
+  <!--预约看房 模块框-->
+  <view class="reservation-box" wx:if="{{modeCheck}}">
+
+    <view class="reservation-content">
+      <view class="reservation-title">请填写预约信息</view>
+      <image src="/images/del.png" class=" res-close-btn" bindtap="resModeChange"></image>
+      <form bindsubmit="formSubmit">
+        <view class="reser-item">
+          <input type="text" placeholder="姓名" name="username" placeholder-class="res-default" />
+        </view>
+        <view class="reser-item">
+          <input type="text" placeholder="联系方式" name="phone" placeholder-class="res-default" />
+        </view>
+        <view class="reser-item">
+          <picker bindchange="dateChange" name='time' mode="date" class="cm-input" value="{{time}}" start="2017-01-01" end="2099-01-01">
+            <input name="time" type="text" placeholder="预约时间" class="cm-input" placeholder-class="res-default" class="cm-input" value="{{time}}" disabled/>
+            <view class="cm-hidden-wrap"></view>
+          </picker>
+        </view>
+        <button formType="submit" class="btn-default reser-btn">提交</button>
+      </form>
+    </view>
+
+  </view>
+
+  <!--预约看房 模块框end-->
+</view>

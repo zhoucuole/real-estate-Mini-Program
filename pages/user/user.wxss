@@ -1,0 +1,116 @@
+/**index.wxss**/
+
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+  position: relative;
+}
+
+.modal-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-top {
+  position: absolute;
+  top: 70rpx;
+  left: 100rpx;
+  width: 430rpx;
+  z-index: 100;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx;
+}
+.QR{
+  margin-bottom: 100rpx;
+  height: 250rpx;
+  width: 250rpx;
+}
+.QR-headlike{
+  height: 100rpx;
+  width: 100rpx;
+}
+.QR-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  margin-top: 50rpx;
+  margin-bottom:10rpx;
+}
+.QR-name image{
+  height: 30rpx;
+  width: 30rpx;
+}
+.QR-phone{
+  margin-bottom: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+.QR-phone image{
+  height: 30rpx;
+  width: 30rpx;
+}
+.userinfo {
+  background: #fff;
+  display: flex;
+  padding: 55rpx 0 20rpx;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo .userinfo-nickname {
+  margin-top: 33rpx;
+}
+
+.userinfo .dec-text {
+  margin-top: 20rpx;
+  width: 360rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.code-icon {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 260rpx;
+  right: 50rpx;
+}
+
+.control-wrap {
+  margin-top: 50rpx;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  align-items: center;
+  line-height: 70rpx;
+  font-size: 32rpx;
+}
+
+.control-item .tnum {
+  font-size: 38rpx;
+}

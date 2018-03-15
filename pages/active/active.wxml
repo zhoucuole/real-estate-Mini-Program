@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="tab-bar">
+    <text data-flag="house" bindtap="tab_change" class="{{tab_flag=='house'?'tab-active':''}}">优惠房源</text>
+    <text data-flag="police" bindtap="tab_change" class="{{tab_flag=='police'?'tab-active':''}}">优惠政策</text>
+  </view>
+  <view class="main-body">
+    <view class="house-cell" wx:key="{{index}}" wx:for="{{house_list}}" wx:if="{{tab_flag=='house'}}">
+      <image src="{{item.img_url}}"></image>
+      <text>{{item.title}}</text>
+      <text>
+        <text class="color-yellow">{{item.price}}</text>万元 <text class="margin-control">|</text>{{item.square}}m²</text>
+      <text>{{item.before_price}}万元</text>
+      <button class="btn-default">立即预约</button>
+    </view>
+
+    <view class="police-cell" wx:key="{{index}}" wx:if="{{tab_flag=='police'}}" wx:for="{{police_list}}">
+      <text class="police-title">{{item.title}}</text>
+      <image src="{{item.img_url}}"></image>
+      <text class="police-context">{{item.context}}</text>
+      <view>
+        <navigator url="url" class="police-detail">点击进入查看详情  >></navigator>
+        <text class="police-time">{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+</view>

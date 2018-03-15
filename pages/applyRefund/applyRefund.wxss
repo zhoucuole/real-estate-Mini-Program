@@ -1,0 +1,18 @@
+/**index.wxss**/
+.container {
+  background: #f2f2f2;
+  padding-bottom: 40rpx;
+}
+.text-wrap {
+  background:#fff;
+
+}
+.text-box {
+  padding: 20rpx;
+  height: 450rpx;
+  box-sizing: border-box;
+}
+.btn-wrap {
+  margin-top: 100rpx;
+  padding: 0 30rpx;
+}

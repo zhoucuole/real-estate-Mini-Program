@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="dec-text">{{userInfo.dec}}</text>
+    <image bindtap="showQR" src="{{code}}" class="code-icon"></image>
+    <view class="control-wrap">
+      <navigator url="../collection/collection" class="control-item">
+        <text class="tnum">{{count.store}}</text>
+        <text>收藏</text>
+      </navigator>
+      <navigator url="../myHouse/myhouse" class="control-item">
+        <text class="tnum">{{count.room_count}}</text>
+        <text>房源</text>
+      </navigator>
+      <navigator url="../record/record" class="control-item">
+        <text class="tnum">{{count.room_log_count}}</text>
+        <text>看房记录</text>
+      </navigator>
+    </view>
+  </view>
+
+  <!--模态-->
+  <view class="modal-bottom" wx:if="{{modal_flag}}" bindtap="modalHide"></view>
+  <view class="modal-top" wx:if="{{modal_flag}}">
+    <!--头像-->
+    <image class="QR-headlike" src="{{userInfo.avatarUrl}}"></image>
+    <view class="QR-name">
+      <image src="/images/name.png"></image>三月
+    </view>
+    <view class="QR-phone">
+      <image src="/images/phone.png"></image>18825101777
+    </view>
+    <!--二维码-->
+    <image class="QR" src="{{'https://'+QR_url}}"></image>
+    <text class="QR-message">扫一扫上面的二维码图案，查看我的房源信息</text>
+  </view>
+
+  <view class="cm-link-wrap cm-margin-top">
+    <navigator url="../publishSelect/publishSelect" class="link-item">
+      <text class="link-text">我要放盘</text>
+      <view class="link-dc">
+        <text>放盘有礼（1个星期内到店领取）</text>
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <navigator url="../reservation/reservation" class="link-item">
+      <text class="link-text">我的预约</text>
+      <view class="link-dc">
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <navigator url="../reservationOrder/reservationOrder" class="link-item">
+      <text class="link-text">我的订单</text>
+      <view class="link-dc">
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <!--<navigator url="../message/message" class="link-item">
+      <text class="link-text">我的消息</text>
+      <view class="link-dc">
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>-->
+
+    <navigator url="../person/person" class="link-item">
+      <text class="link-text">个人信息设置</text>
+      <view class="link-dc">
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+    <navigator url="../complain/complain" class="link-item">
+      <text class="link-text">投诉建议</text>
+      <view class="link-dc">
+        <image src="/images/right.png" class="icon-default" />
+      </view>
+    </navigator>
+  </view>
+
+</view>
